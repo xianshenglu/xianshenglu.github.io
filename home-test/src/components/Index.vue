@@ -1,7 +1,7 @@
 <template>
  <section class="page page-index" >
      <div class="page-index-detail index-avatar">
-       <img :src="index.avatar" class="index-avatar-img">
+        <img :src="index.avatar" class="index-avatar-img">
      </div>
      <div class="page-index-detail index-author">{{index.author}}</div>
      <div class="page-index-detail index-career">{{index.career}}</div>
@@ -10,9 +10,11 @@
        :key="index"
        :href="item.url"
        class="social-link"
-       :title="item.name"
+       target="_blank"
        >
-        <img :src="item.icon" class="social-link-img" >
+        <svg :class="'icon social-link-img '+item.icon" aria-hidden="true">
+          <use :xlink:href="'#'+item.icon"></use>
+        </svg>
        </a>
      </div>
  </section>
@@ -104,9 +106,26 @@ export default {
   width: 100%;
 }
 .index-social .social-link {
+  position: relative;
+
   width: 40px;
   height: 40px;
   margin: 10px 20px;
+}
+.social-link .social-link-img {
+  border-radius: 0;
+}
+.social-link:hover .icon-github {
+  fill: #171515;
+}
+.social-link:hover .icon-blog {
+  fill: #52c5f9;
+}
+.social-link:hover .icon-segmentfault {
+  fill: #009a61;
+}
+.social-link:hover .icon-stackoverflow {
+  fill: #f48024;
 }
 
 </style>

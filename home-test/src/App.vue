@@ -91,12 +91,13 @@ export default {
       this.sections.find(section => section.id === this.currentNavId).checked = 'checked'
     },
     navClear () {
+      console.log(new Date(), this.sections)
       this.sections.forEach(section => { section.checked = '' })
     },
     navUpdate (targetNavId) {
+      this.currentNavId = targetNavId
       this.sections.find(section => section.id === targetNavId)
         .checked = 'checked'
-      this.currentNavId = targetNavId
     },
     navChangeHandler (e) {
       this.navClear()
@@ -125,7 +126,10 @@ export default {
         )
         circleAction.forEach(ele => {
           let percent = ele.getAttribute('data-percent')
+          let stroke = ele.getAttribute('data-stroke')
           ele.style.strokeDasharray = isInView ? percent + ' 100' : ''
+          ele.style.stroke = stroke
+          ele.parentNode.parentNode.style.color = stroke
         })
       }
     },

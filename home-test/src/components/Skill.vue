@@ -5,18 +5,24 @@
    </div>
    <ul class="page-skill-detail skill-native">
      <li class="native-list" v-for="(item,index) in skill.data.native" :key="index">
-       <svg class="skill-percent-svg" viewBox="0 0 31.831 31.831">
-        <circle class="percent-circle" r="15.9155" cx="15.9155" cy="15.9155" :data-percent="item.percent" />
+       <svg class="frame-list-percent" viewBox="0 0 31.831 31.831">
+        <circle class="percent-circle" r="15.9155" cx="15.9155" cy="15.9155"
+        :data-percent="item.percent" :data-stroke="item.color" />
        </svg>
-       <img :src="item.icon" class="native-list-img">
+       <span class="native-list-name">
+         {{item.name.toUpperCase()}}
+       </span>
      </li>
    </ul>
    <ul class="page-skill-detail skill-frame">
       <li class="frame-list" v-for="(item,index) in skill.data.frame" :key="index">
-        <svg class="skill-percent-svg" viewBox="0 0 31.831 31.831">
-          <circle class="percent-circle" r="15.9155" cx="15.9155" cy="15.9155" :data-percent="item.percent" />
+        <svg class="frame-list-percent" viewBox="0 0 31.831 31.831">
+          <circle class="percent-circle" r="15.9155" cx="15.9155" cy="15.9155"
+          :data-percent="item.percent"  :data-stroke="item.color" />
         </svg>
-        <img :src="item.icon" class="frame-list-img">
+        <span class="frame-list-name">
+          {{item.name}}
+        </span>
       </li>
    </ul>
  </section>
@@ -35,6 +41,8 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
+
+  font-size: 30px;
 }
 .page-skill .page-skill-detail {
   flex: 1 1 auto;
@@ -44,8 +52,10 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.skill-name .skill-name-text {
-  font-size: 30px;
+.skill-name .skill-name-text,
+.native-list .native-list-name,
+.frame-list .frame-list-name {
+  font-size: inherit;
   font-weight: 900;
 }
 .page-skill .skill-native,
@@ -58,20 +68,29 @@ export default {
 .skill-frame .frame-list {
   position: relative;
 
-  width: 100px;
-  height: 100px;
+  display: flex;
+  /* overflow: hidden; */
+  align-items: center;
+  justify-content: center;
+
+  width: 150px;
+  height: 150px;
   margin: 10px 20px;
   padding: 10px;
+
+  word-wrap: break-word;
 }
 @media screen and (max-width: 500px) {
   .skill-native .native-list,
   .skill-frame .frame-list {
     width: 80px;
     height: 80px;
+
+    font-size: 18px;
   }
 }
-.skill-native .native-list .skill-percent-svg,
-.skill-frame .frame-list .skill-percent-svg {
+.native-list .frame-list-percent,
+.frame-list .frame-list-percent {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -85,22 +104,13 @@ export default {
   border-radius: 50%;
   background: #fff;
 }
-.skill-percent-svg .percent-circle {
+.frame-list-percent .percent-circle {
   transition: stroke-dasharray 2s ease;
 
   fill: #fff;
-  stroke: yellowgreen;
-  stroke-width: 31.831;
+  /* stroke-width: 31.831; */
+  stroke-width: 6;
   stroke-dasharray: 0 100;
-}
-.native-list .native-list-img,
-.frame-list .frame-list-img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  border-radius: 50%;
 }
 
 </style>

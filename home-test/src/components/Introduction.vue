@@ -10,7 +10,10 @@
     <ul class="intro-data-detail intro-data-info">
       <li class="info-list" v-for="(info,index) in introduction.data.info"
     :key="index">
-        <img class="info-list-img" :src="info.icon">
+        <!-- <img class="info-list-img" :src="info.icon"> -->
+        <svg :class="'icon info-list-img '+info.icon" aria-hidden="true">
+          <use :xlink:href="'#'+info.icon"></use>
+        </svg>
         <span class="info-list-name">{{info.name}}</span>
         <span class="info-list-value">{{info.value}}</span>
       </li>
@@ -18,7 +21,10 @@
     <ul class="intro-data-detail intro-data-contact">
       <li class="contact-list" v-for="(contact,index) in introduction.data.contact"
     :key="index">
-        <img class="contact-list-img" :src="contact.icon">
+        <!-- <img class="contact-list-img" :src="contact.icon"> -->
+        <svg :class="'icon contact-list-img '+contact.icon" aria-hidden="true">
+          <use :xlink:href="'#'+contact.icon"></use>
+        </svg>
         <span class="contact-list-name">{{contact.name}}</span>
         <span class="contact-list-value">{{contact.value}}</span>
       </li>
@@ -128,8 +134,14 @@ export default {
   .contact-list .contact-list-name {
     display: inline;
 
-    margin-right: 5px;
+    margin: 0 5px 0 10px;
   }
+}
+.info-list .info-list-name,
+.info-list .info-list-value,
+.contact-list .contact-list-name,
+.contact-list .contact-list-value {
+  line-height: 1.5;
 }
 .contact-list .contact-list-value {
   position: relative;

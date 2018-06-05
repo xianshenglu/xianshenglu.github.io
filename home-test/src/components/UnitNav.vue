@@ -3,7 +3,9 @@
   <ul class="nav-data">
     <li :class="nav.checked+' nav-data-list'" :data-target-nav-id="nav.id" v-for="(nav,index) in navs" :key="index">
         <span class="list-info" :data-target-nav-id="nav.id">{{nav.name}}</span>
-        <img class="list-img" :data-target-nav-id="nav.id" :src="nav.icon">
+        <svg :class="'icon list-img '+nav.icon" aria-hidden="true" :data-target-nav-id="nav.id" >
+          <use :xlink:href="'#'+nav.icon"></use>
+        </svg>
     </li>
   </ul>
  </nav>

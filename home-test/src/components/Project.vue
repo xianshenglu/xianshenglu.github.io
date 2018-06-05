@@ -8,14 +8,18 @@
        <img :src="item.img" class="list-img">
        <div class="list-description">{{item.description}}</div>
        <div class="list-link">
-         <a :href="item.source.name" class="list-link-detail">{{item.source.name}}</a>
-         <a :href="item.preview.url" class="list-link-detail">{{item.preview.name}}</a>
+         <a :href="item.source.name" class="list-link-detail" target="_blank">{{item.source.name}}</a>
+         <a :href="item.preview.url" class="list-link-detail" target="_blank">{{item.preview.name}}</a>
        </div>
      </li>
    </ul>
    <div class="page-project-detail project-hint">
      <span class="project-hint-name">{{project.more.name}}</span>
-     <img :src="project.more.icon" class="project-hint-img">
+     <a :href="project.more.url" class="project-hint-link" target="_blank">
+      <svg :class="'icon link-img '+project.more.icon" aria-hidden="true">
+          <use :xlink:href="'#'+project.more.icon"></use>
+      </svg>
+     </a>
    </div>
 
  </section>
@@ -44,7 +48,7 @@ export default {
 @media screen and (max-height: 600px) {
   /*Nokia Lumia 520*/
   .page-project {
-    min-height: 270vh;
+    /* min-height: 270vh; */
   }
 }
 .page-project .page-project-detail {
@@ -126,7 +130,10 @@ export default {
   flex-flow: row nowrap;
   justify-content: center;
 }
-.project-hint .project-hint-img {
+.project-hint .project-hint-link:hover {
+  cursor: pointer;
+}
+.project-hint-link .link-img {
   display: block;
 
   width: 25px;
