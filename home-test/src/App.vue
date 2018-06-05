@@ -59,6 +59,37 @@ export default {
 
   },
   methods: {
+    closest (ele, selector) {
+      let targetEle = Array.from(document.querySelectorAll(selector))
+      while (ele.tagName.toLowerCase() !== 'html') {
+        if (targetEle.includes(ele)) {
+          return ele
+        }
+        ele = ele.parentNode
+      }
+    },
+    smoothScoll (targetScrollTop) {
+      let self = this
+      let stepSpeed = 0.1
+      function step () {
+        let distance = targetScrollTop - self.htmlScrollTop
+        let stepSize = stepSpeed * distance
+        switch (Math.ceil(stepSize)) {
+          case 0:
+            stepSize = -1
+            break
+          case 1:
+            stepSize = 1
+            break
+        }
+        if (distance !== 0) {
+          console.log(distance, stepSize)
+          window.scrollTo(0, self.htmlScrollTop + stepSize)
+          window.requestAnimationFrame(step)
+        }
+      }
+      step()// not perfect
+    },
     findSection (id) {
       return this.sections.find(section => section.id === id)
     },
@@ -91,7 +122,6 @@ export default {
       this.sections.find(section => section.id === this.currentNavId).checked = 'checked'
     },
     navClear () {
-      console.log(new Date(), this.sections)
       this.sections.forEach(section => { section.checked = '' })
     },
     navUpdate (targetNavId) {
@@ -101,15 +131,19 @@ export default {
     },
     navChangeHandler (e) {
       this.navClear()
-      let targetNavId = e.target.getAttribute('data-target-nav-id')
+      let targetNavId = this.closest(e.target, '[data-target-nav-id]').getAttribute('data-target-nav-id')
       this.navUpdate(targetNavId)
       let pos = document.getElementById(targetNavId).getBoundingClientRect().top + this.htmlScrollTop
-      window.scrollTo({
-        top: pos,
-        behavior: 'smooth'
-      })
+      // window.scrollTo({
+      //   top: pos,
+      //   behavior: 'smooth'
+      // })
+      console.log(pos)
+
+      this.smoothScoll(pos)
     },
     scrollHandlerGlobal () {
+      // console.log(event)
       this.htmlScrollTop = document.documentElement.scrollTop
       localStorage.setItem('htmlScrollTop', this.htmlScrollTop)
       this.scrollHandlerForSkill()

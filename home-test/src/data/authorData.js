@@ -113,7 +113,7 @@ let authorData = {
               {
                 name: 'jQuery',
                 icon: 'icon-jquery1',
-                percent: 30,
+                percent: 25,
                 color: '#0769ad'
               },
               {
