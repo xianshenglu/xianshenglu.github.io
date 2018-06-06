@@ -22,20 +22,23 @@ For a detailed explanation on how things work, check out the [guide][guide] and 
 
 ## Deskop
 
-- Chrome, Firefox,
-- IE10+, Edge
+- Chrome
+- Firefox
+- IE10+
+- Edge
 
 ## Mobile
 
 - testing
 
-Reference:
-[ijason][ijason]
-[fenav][fenav]
+# Reference:
+
+- [ijason][ijason]
+
+- [fenav][fenav]
 
 [ijason]: https://ijason.cc/
 [fenav]: http://fenav.com/jianli/
-
-[site]:
+[site]: https://xianshenglu.github.io/home/dist/index.html
 [guide]: http://vuejs-templates.github.io/webpack/
 [docs for vue-loader]: http://vuejs.github.io/vue-loader
