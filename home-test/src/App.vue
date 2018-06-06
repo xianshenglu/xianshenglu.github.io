@@ -31,8 +31,9 @@ export default {
   data: function () {
     return {
       viewportHeight: 100,
-      htmlScrollTop: 100,
+      currentHtmlScrollTop: 100,
       currentNavId: 'index',
+      animationFrameId: 1,
       authorData
     }
   },
@@ -71,8 +72,15 @@ export default {
     smoothScoll (targetScrollTop) {
       let self = this
       let stepSpeed = 0.1
-      function step () {
-        let distance = targetScrollTop - self.htmlScrollTop
+      let startTime = 0
+      window.cancelAnimationFrame(self.animationFrameId)
+      self.animationFrameId = window.requestAnimationFrame(step)
+      function step (timestamp) {
+        startTime = startTime || timestamp
+        let diff = timestamp - startTime
+        let distance = targetScrollTop - self.currentHtmlScrollTop
+        console.log(targetScrollTop, self.currentHtmlScrollTop, distance)
+
         let stepSize = stepSpeed * distance
         switch (Math.ceil(stepSize)) {
           case 0:
@@ -82,13 +90,13 @@ export default {
             stepSize = 1
             break
         }
-        if (distance !== 0) {
-          console.log(distance, stepSize)
-          window.scrollTo(0, self.htmlScrollTop + stepSize)
-          window.requestAnimationFrame(step)
+
+        if (distance !== 0 && diff < 2000) {
+          // console.log(...[distance, targetScrollTop, self.currentHtmlScrollTop, self.currentHtmlScrollTop + stepSize, diff].map(v => Math.round(v)), self.currentHtmlScrollTop + stepSize)
+          window.scrollTo(0, self.currentHtmlScrollTop + stepSize)
+          self.animationFrameId = window.requestAnimationFrame(step)
         }
       }
-      step()// not perfect
     },
     findSection (id) {
       return this.sections.find(section => section.id === id)
@@ -133,19 +141,25 @@ export default {
       this.navClear()
       let targetNavId = this.closest(e.target, '[data-target-nav-id]').getAttribute('data-target-nav-id')
       this.navUpdate(targetNavId)
-      let pos = document.getElementById(targetNavId).getBoundingClientRect().top + this.htmlScrollTop
+      /*
+      * document.documentElement.scrollTop in targetScrollTop will get the latest scrollTop
+      * which will be more accurate than this.currentHtmlScrollTop,
+      * especially when user doubleclicks the nav
+      */
+      let targetScrollTop = document.getElementById(targetNavId).getBoundingClientRect().top + document.documentElement.scrollTop
+      /*
+      TODO: {behavior: 'smooth'} is supported by Chrome and FF while IE and Edge don't support.
+      TODO: That's why I made smoothScoll in methods.
+      */
       // window.scrollTo({
       //   top: pos,
       //   behavior: 'smooth'
       // })
-      console.log(pos)
-
-      this.smoothScoll(pos)
+      this.smoothScoll(targetScrollTop)
     },
     scrollHandlerGlobal () {
-      // console.log(event)
-      this.htmlScrollTop = document.documentElement.scrollTop
-      localStorage.setItem('htmlScrollTop', this.htmlScrollTop)
+      this.currentHtmlScrollTop = document.documentElement.scrollTop
+      localStorage.setItem('currentHtmlScrollTop', this.currentHtmlScrollTop)
       this.scrollHandlerForSkill()
       this.scrollHandlerForNav()
     },
@@ -169,12 +183,12 @@ export default {
     },
     scrollHandlerForNav () {
       this.navClear()
-      let scrollPos = Math.round(this.htmlScrollTop / this.viewportHeight)
+      let scrollPos = Math.round(this.currentHtmlScrollTop / this.viewportHeight)
       this.currentNavId = this.sections[scrollPos].id
       this.sections[scrollPos].checked = 'checked'
     },
     scrollToLastPos () {
-      let lastPos = Number(localStorage.getItem('htmlScrollTop'))
+      let lastPos = Number(localStorage.getItem('currentHtmlScrollTop'))
       if (lastPos) {
         document.documentElement.scrollTop = lastPos
       } else {
@@ -205,5 +219,4 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 </style>
