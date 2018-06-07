@@ -108,7 +108,7 @@ export default {
   display: flex;
   flex: 1 1 auto;
   flex-flow: column nowrap;
-
+  width: 100%;
   max-height: 200px;
   margin: 20px 0;
 
@@ -129,12 +129,6 @@ export default {
   justify-content: center;
 }
 .description-highlight .description-highlight-list {
-  text-align: left;
-  /* text-align-last: center; */
-}
-.description-highlight .description-highlight-list::first-line {
-  content: "";
-
   text-align: left;
 }
 .description-highlight-list .highlight-list-icon {
@@ -186,5 +180,4 @@ export default {
 .project-hint .project-hint-name {
   margin: 0 10px;
 }
-
 </style>

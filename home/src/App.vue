@@ -17,6 +17,9 @@ import Index from './components/Index'
 import Introduction from './components/Introduction'
 import Skill from './components/Skill'
 import Project from './components/Project'
+function $ (str) {
+  return Array.from(document.querySelectorAll(str))
+}
 
 export default {
   name: 'App',
@@ -174,8 +177,9 @@ export default {
     },
     scrollHandlerForNav () {
       this.navClear()
-      let scrollPos = Math.round(document.documentElement.scrollTop / document.documentElement.clientHeight)
+      let scrollPos = Math.min(Math.round(document.documentElement.scrollTop / document.documentElement.clientHeight), 3)
       this.currentNavId = this.sections[scrollPos].id
+
       this.sections[scrollPos].checked = 'checked'
     },
     scrollToLastPos () {
@@ -209,5 +213,4 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 </style>
