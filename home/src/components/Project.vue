@@ -136,7 +136,7 @@ export default {
 
   vertical-align: 1px;
 
-  font-size: 12px;
+  font-size: 8px;
 }
 .description-highlight-list .highlight-list-text {
   text-align-last: center;

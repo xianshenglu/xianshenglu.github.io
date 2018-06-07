@@ -50,7 +50,7 @@ export default {
   }
 }
 .page-index::after {
-  content: "⇣";
+  content: '⇣';
   position: absolute;
   right: 0;
   bottom: 40px;
@@ -129,5 +129,4 @@ export default {
 .social-link:hover .icon-stackoverflow {
   fill: #f48024;
 }
-
 </style>
