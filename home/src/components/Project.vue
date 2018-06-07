@@ -6,7 +6,15 @@
    <ul class="page-project-detail project-data">
      <li class="project-data-list" v-for="(item,index) in project.data" :key="index">
        <img :src="item.img" class="list-img">
-       <div class="list-description">{{item.description}}</div>
+       <div class="list-description">
+         <h5 class="list-description-detail description-title">{{item.description.title}}</h5>
+         <ul class="list-description-detail description-highlight">
+           <li class="description-highlight-list"  v-for="(highlight,hlIndex) in item.description.highlights" :key="'highlight'+hlIndex">
+             <span class="highlight-list-icon">⚫</span>
+             <span class="highlight-list-text">{{highlight}}</span>
+           </li>
+         </ul>
+       </div>
        <div class="list-link">
          <a :href="item.source.name" class="list-link-detail" target="_blank">{{item.source.name}}</a>
          <a :href="item.preview.url" class="list-link-detail" target="_blank">{{item.preview.name}}</a>
@@ -21,7 +29,6 @@
       </svg>
      </a>
    </div>
-
  </section>
 </template>
 
@@ -45,12 +52,6 @@ export default {
     min-height: 230vh;
   }
 }
-@media screen and (max-height: 600px) {
-  /*Nokia Lumia 520*/
-  .page-project {
-    /* min-height: 270vh; */
-  }
-}
 .page-project .page-project-detail {
   flex: 1 1 auto;
 }
@@ -65,7 +66,6 @@ export default {
 .page-project .project-data {
   display: flex;
   align-content: center;
-  flex-flow: row nowrap;
   justify-content: center;
 
   width: 100%;
@@ -79,8 +79,8 @@ export default {
 }
 .project-data .project-data-list {
   display: flex;
+  align-items: center;
   flex-flow: column nowrap;
-  justify-content: space-between;
 
   box-sizing: border-box;
   width: 250px;
@@ -104,16 +104,53 @@ export default {
   transform: scale(1.1);
 }
 .project-data-list .list-description {
-  overflow: hidden;
+  /* overflow: hidden; */
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
 
   max-height: 200px;
   margin: 20px 0;
 
   line-height: 1.5;
 }
+
+.list-description .description-title {
+  align-self: center;
+
+  height: 50px;
+
+  line-height: 50px;
+}
+.list-description .description-highlight {
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+.description-highlight .description-highlight-list {
+  text-align: left;
+  /* text-align-last: center; */
+}
+.description-highlight .description-highlight-list::first-line {
+  content: "";
+
+  text-align: left;
+}
+.description-highlight-list .highlight-list-icon {
+  margin-right: 5px;
+
+  vertical-align: 1px;
+
+  font-size: 12px;
+}
+.description-highlight-list .highlight-list-text {
+  text-align-last: center;
+}
 .project-data-list .list-link {
   display: flex;
-  flex-flow: row nowrap;
+
+  width: 100%;
 }
 .list-link .list-link-detail {
   display: block;
@@ -129,7 +166,6 @@ export default {
 .page-project .project-hint {
   display: flex;
   align-items: center;
-  flex-flow: row nowrap;
   justify-content: center;
 }
 .project-hint .project-hint-link:hover {
