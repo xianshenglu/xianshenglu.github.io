@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     sections () {
-      return this.authorData.langs.find(lang => lang.checked).sections
+      return this.authorData.langs.find(lang => lang.checked === 'checked').sections
     }
   },
   beforeCreate () {
@@ -60,7 +60,6 @@ export default {
   },
   methods: {
     closest (ele, selector) {
-      // let targetEle = Array.from(document.querySelectorAll(selector))
       let targetEle = $(selector)
       while (ele.tagName.toLowerCase() !== 'html') {
         if (targetEle.includes(ele)) {
@@ -103,13 +102,10 @@ export default {
       this.authorData.langs.forEach(lang => { lang.checked = '' })
     },
     langBackToLast () {
-      this.langClear()
       let lastLangId = localStorage.getItem('lang')
-
       if (lastLangId) {
+        this.langClear()
         this.authorData.langs.find(lang => lang.id === lastLangId).checked = 'checked'
-      } else {
-        this.authorData.langs[0].checked = 'checked'
       }
     },
     langChangeHandler (e) {
