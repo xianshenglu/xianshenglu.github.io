@@ -24,12 +24,17 @@ For a detailed explanation on how things work, check out the [guide][guide] and 
 
 - Chrome
 - Firefox
-- IE10+
-- Edge
+- IE10+ (losing transition on skill)
+- Edge (losing transition on skill)
+- Others, not test...
 
 ## Mobile
 
 - testing
+
+# About Fork
+
+- If you want to make your own page by forking, all you need to do is to update _home/src/assets/js/authorData.js_ according to your information.
 
 # Reference:
 

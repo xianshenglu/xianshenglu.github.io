@@ -1,3 +1,8 @@
+const avatar = require('../images/avator.png')
+const blogImg = require('../images/blog.gif')
+const homepageImg = require('../images/homepage.gif')
+const toDoMvc = require('../images/to-do-mvc.gif')
+
 let authorData = {
   langs: [
     {
@@ -11,7 +16,7 @@ let authorData = {
           name: '首页',
           icon: 'icon-index',
           author: '陆先生',
-          avatar: '../static/images/avator.png',
+          avatar: avatar,
           career: '前端新人，请多指教',
           social: [
             {
@@ -136,26 +141,32 @@ let authorData = {
           icon: 'icon-project',
           data: [
             {
-              img: '../static/images/homepage.gif',
-              description: `个人主页，没错，就是你现在看到的这个，使用 Vue.js 制作。
-                亮点：
-                1. 支持页内中英文语言切换，不损失原来的浏览位置；
-                2. 滚动条和语言偏好记忆；`,
+              img: homepageImg,
+              description: {
+                title: `Vue.js 的个人主页`,
+                subtitle: `亮点`,
+                highlights: [
+                  `支持页内中英文切换，不损失原来的浏览位置`,
+                  `滚动条位置和语言偏好记忆`
+                ]
+              },
               source: {
                 name: '源码',
-                url: ''
+                url:
+                  'https://github.com/xianshenglu/xianshenglu.github.io/tree/master/home'
               },
               preview: {
                 name: '预览',
-                url: ''
+                url: 'https://xianshenglu.github.io/home/dist/index.html'
               }
             },
             {
-              img:
-                'https://github.com/xianshenglu/vue/raw/master/demo/img-displayed/todo-mvc.gif',
-              description: `Vue.js 的 ToDoList，
-                亮点：
-                1. 用户数据保存在 localStroage 里面。`,
+              img: toDoMvc,
+              description: {
+                title: `Vue.js 的 ToDoList`,
+                subtitle: `亮点`,
+                highlights: [`数据保存在 localStroage，供未来使用`]
+              },
               source: {
                 name: '源码',
                 url:
@@ -168,10 +179,14 @@ let authorData = {
               }
             },
             {
-              img: '../static/images/blog.gif',
-              description: `基于 Hexo 和 Next 主题搭建的个人博客[英]。
-                亮点：
-                1. 这个项目搭建在 blog 仓库下，并没有搭建在默认的 username.github.io 仓库。`,
+              img: blogImg,
+              description: {
+                title: ` Hexo 和 Next 搭建的博客`,
+                subtitle: `亮点`,
+                highlights: [
+                  `通过配置、脚本把项目搭建在 blog 仓库下，而不是默认的 username.github.io`
+                ]
+              },
               source: {
                 name: '源码',
                 url: 'https://github.com/xianshenglu/blog'
@@ -201,7 +216,7 @@ let authorData = {
           name: 'Index',
           icon: 'icon-index',
           author: 'Xiansheng Lu',
-          avatar: '../static/images/avator.png',
+          avatar: avatar,
           career: 'Freshmen in FrontEnd, Nice to Meet You!',
           social: [
             {
@@ -318,27 +333,34 @@ let authorData = {
           icon: 'icon-project',
           data: [
             {
-              img: '../static/images/homepage.gif',
-              description: `Homepage built by Vue.js.
-                Highlights：
-                1. Support language switch without losing position in one page.
-                2. Scrollbar and language memory.`,
+              img: homepageImg,
+              description: {
+                title: `Homepage built by Vue.js`,
+                subtitle: `Highlights`,
+                highlights: [
+                  `Support language switch without losing position in one page.`,
+                  `Scrollbar and language memory.`
+                ]
+              },
               source: {
                 name: 'Source',
-                url: ''
+                url:
+                  'https://github.com/xianshenglu/xianshenglu.github.io/tree/master/home'
               },
               preview: {
                 name: 'Preview',
-                url: ''
+                url: 'https://xianshenglu.github.io/home/dist/index.html'
               }
             },
             {
-              img:
-                'https://github.com/xianshenglu/vue/raw/master/demo/img-displayed/todo-mvc.gif',
-              description: `ToDoList built by Vue.js.
-              Highlights：
-              1. User's data was saved in localStroage.`,
-
+              img: toDoMvc,
+              description: {
+                title: `ToDoList built by Vue.js`,
+                subtitle: `Highlights`,
+                highlights: [
+                  `User's data was saved in localStroage for future use.`
+                ]
+              },
               source: {
                 name: 'Source',
                 url:
@@ -351,10 +373,14 @@ let authorData = {
               }
             },
             {
-              img: '../static/images/blog.gif',
-              description: `Blog built by Hexo and Next.
-              Highlights：
-              1. Built under custom repository not the default repository like xianshenglu.github.io `,
+              img: blogImg,
+              description: {
+                title: `Blog built by Hexo and Next`,
+                subtitle: `Highlights`,
+                highlights: [
+                  `Built under custom repository not the default repo like username.github.io `
+                ]
+              },
               source: {
                 name: 'Source',
                 url: 'https://github.com/xianshenglu/blog'

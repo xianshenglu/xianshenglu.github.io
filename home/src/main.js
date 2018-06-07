@@ -3,9 +3,9 @@
 import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
-import '../static/css/reset.css'
-import '../static/css/base.css'
 import '../static/js/iconfont.js'
+import './assets/css/base.css'
+import './assets/css/reset.css'
 
 Vue.config.productionTip = false
 
