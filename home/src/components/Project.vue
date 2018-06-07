@@ -16,7 +16,7 @@
          </ul>
        </div>
        <div class="list-link">
-         <a :href="item.source.name" class="list-link-detail" target="_blank">{{item.source.name}}</a>
+         <a :href="item.source.url" class="list-link-detail" target="_blank">{{item.source.name}}</a>
          <a :href="item.preview.url" class="list-link-detail" target="_blank">{{item.preview.name}}</a>
        </div>
      </li>
