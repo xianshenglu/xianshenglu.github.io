@@ -60,7 +60,8 @@ export default {
   },
   methods: {
     closest (ele, selector) {
-      let targetEle = Array.from(document.querySelectorAll(selector))
+      // let targetEle = Array.from(document.querySelectorAll(selector))
+      let targetEle = $(selector)
       while (ele.tagName.toLowerCase() !== 'html') {
         if (targetEle.includes(ele)) {
           return ele
@@ -78,7 +79,7 @@ export default {
       function step (timestamp) {
         startTime = startTime || timestamp
         let interval = timestamp - startTime
-        let distance = targetScrollTop - document.documentElement.scrollTop
+        let distance = targetScrollTop - $('html')[0].scrollTop
         let stepSize = speed * distance
         switch (Math.ceil(stepSize)) {
           case 0:
@@ -90,7 +91,7 @@ export default {
         }
 
         if (distance !== 0 && interval < timeLimit) {
-          window.scrollTo(0, document.documentElement.scrollTop + stepSize)
+          window.scrollTo(0, $('html')[0].scrollTop + stepSize)
           self.animationFrameId = window.requestAnimationFrame(step)
         }
       }
@@ -136,11 +137,11 @@ export default {
       let targetNavId = this.closest(e.target, '[data-target-nav-id]').getAttribute('data-target-nav-id')
       this.navUpdate(targetNavId)
       /*
-      * document.documentElement.scrollTop in targetScrollTop will get the latest scrollTop
+      * $('html')[0].scrollTop in targetScrollTop will get the latest scrollTop
       * which will be more accurate than this.currentHtmlScrollTop,
       * especially when user doubleclicks the nav
       */
-      let targetScrollTop = document.getElementById(targetNavId).getBoundingClientRect().top + document.documentElement.scrollTop
+      let targetScrollTop = $('#' + targetNavId)[0].getBoundingClientRect().top + $('html')[0].scrollTop
       /*
       TODO: {behavior: 'smooth'} is supported by Chrome and FF while IE and Edge don't support.
       TODO: That's why I made smoothScoll in methods.
@@ -152,13 +153,13 @@ export default {
       this.smoothScoll(targetScrollTop)
     },
     scrollHandlerGlobal () {
-      localStorage.setItem('currentHtmlScrollTop', document.documentElement.scrollTop)
+      localStorage.setItem('currentHtmlScrollTop', $('html')[0].scrollTop)
       this.scrollHandlerForSkill()
       this.scrollHandlerForNav()
     },
     scrollHandlerForSkill () {
-      let skillBoundingClientTop = document.getElementById('skill').getBoundingClientRect().top
-      let viewportHeight = document.documentElement.clientHeight
+      let skillBoundingClientTop = $('#skill')[0].getBoundingClientRect().top
+      let viewportHeight = $('html')[0].clientHeight
       let isInView = !!(skillBoundingClientTop >= -viewportHeight / 1.3 && skillBoundingClientTop <= viewportHeight / 2)
       showSkillPercent(isInView)
 
@@ -177,7 +178,7 @@ export default {
     },
     scrollHandlerForNav () {
       this.navClear()
-      let scrollPos = Math.min(Math.round(document.documentElement.scrollTop / document.documentElement.clientHeight), 3)
+      let scrollPos = Math.min(Math.round($('html')[0].scrollTop / $('html')[0].clientHeight), 3)
       this.currentNavId = this.sections[scrollPos].id
 
       this.sections[scrollPos].checked = 'checked'
@@ -185,7 +186,7 @@ export default {
     scrollToLastPos () {
       let lastPos = Number(localStorage.getItem('currentHtmlScrollTop'))
       if (lastPos) {
-        document.documentElement.scrollTop = lastPos
+        $('html')[0].scrollTop = lastPos
       } else {
         this.sections[0].checked = 'checked'
       }
