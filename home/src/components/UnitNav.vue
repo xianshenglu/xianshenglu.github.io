@@ -35,7 +35,7 @@ export default {
 
   font-size: 14px;
 }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1100px) {
   .unit-nav {
     display: none;
   }
@@ -49,7 +49,7 @@ export default {
   cursor: pointer;
 }
 .nav-data .nav-data-list::before {
-  content: "";
+  content: '';
 
   width: 15px;
   height: 15px;
@@ -100,7 +100,7 @@ export default {
   opacity: 1;
 }
 .nav-data-list .list-info::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 0;
@@ -123,5 +123,4 @@ export default {
 .nav-data-list:hover .list-img {
   transform: translate(-50%, -50%) scale(1);
 }
-
 </style>

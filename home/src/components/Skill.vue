@@ -111,5 +111,4 @@ export default {
   stroke-width: 6;
   stroke-dasharray: 0 100;
 }
-
 </style>
