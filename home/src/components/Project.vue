@@ -10,7 +10,7 @@
          <h5 class="list-description-detail description-title">{{item.description.title}}</h5>
          <ul class="list-description-detail description-highlight">
            <li class="description-highlight-list"  v-for="(highlight,hlIndex) in item.description.highlights" :key="'highlight'+hlIndex">
-             <span class="highlight-list-icon">⚫</span>
+             <span class="highlight-list-icon"></span>
              <span class="highlight-list-text">{{highlight}}</span>
            </li>
          </ul>
@@ -46,11 +46,13 @@ export default {
   align-items: center;
   flex-flow: column nowrap;
   justify-content: center;
+  height: auto;
+  min-height: 100vh;
 }
-@media screen and (max-width: 760px) {
-  .page-project {
-    min-height: 230vh;
-  }
+_:-ms-lang(x),
+.page-project {
+  /*IE10 and Edge will ignore flex property with height:auto*/
+  height: 100vh;
 }
 .page-project .page-project-detail {
   flex: 1 1 auto;
@@ -58,6 +60,11 @@ export default {
 .page-project .project-name {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 760px) {
+  .page-project .project-name {
+    margin: 5px 0 15px;
+  }
 }
 .project-name .project-name-text {
   font-size: 30px;
@@ -84,7 +91,6 @@ export default {
 
   box-sizing: border-box;
   width: 250px;
-  max-width: 450px;
   margin: 10px 20px;
   padding: 10px 20px;
 }
@@ -104,13 +110,13 @@ export default {
   transform: scale(1.1);
 }
 .project-data-list .list-description {
-  /* overflow: hidden; */
   display: flex;
   flex: 1 1 auto;
   flex-flow: column nowrap;
-  width: 100%;
+  width: 95%;
+  max-width: 250px;
   max-height: 200px;
-  margin: 20px 0;
+  margin: 20px 20px;
 
   line-height: 1.5;
 }
@@ -133,47 +139,51 @@ export default {
 }
 .description-highlight-list .highlight-list-icon {
   margin-right: 5px;
-
-  vertical-align: 1px;
-
-  font-size: 8px;
-}
-.description-highlight-list .highlight-list-text {
-  text-align-last: center;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #000;
+  vertical-align: middle;
+  vertical-align: 2px;
 }
 .project-data-list .list-link {
   display: flex;
-
+  max-width: 300px;
   width: 100%;
 }
 .list-link .list-link-detail {
   display: block;
   flex: 1 0 auto;
 
-  margin: 0 10px;
+  margin: 0 10px 0 0;
 
   border: 1px solid black;
   border-radius: 20px;
 
   line-height: 30px;
 }
+.list-link .list-link-detail:last-child {
+  margin-right: 0;
+}
 .page-project .project-hint {
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .project-hint .project-hint-link:hover {
   cursor: pointer;
 }
 .project-hint .project-hint-link {
   display: inline-block;
+  vertical-align: top;
 }
 .project-hint-link .link-img {
   display: block;
 
   width: 25px;
   height: 25px;
-  margin: 0 0;
+  margin: 0;
 
   border-radius: 50%;
 }
