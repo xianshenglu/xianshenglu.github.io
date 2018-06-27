@@ -132,20 +132,8 @@ export default {
       this.navClear()
       let targetNavId = this.closest(e.target, '[data-target-nav-id]').getAttribute('data-target-nav-id')
       this.navUpdate(targetNavId)
-      /*
-      * $('html')[0].scrollTop in targetScrollTop will get the latest scrollTop
-      * which will be more accurate than this.currentHtmlScrollTop,
-      * especially when user doubleclicks the nav
-      */
       let targetScrollTop = $('#' + targetNavId)[0].getBoundingClientRect().top + $('html')[0].scrollTop
-      /*
-      TODO: {behavior: 'smooth'} is supported by Chrome and FF while IE and Edge don't support.
-      TODO: That's why I made smoothScoll in methods.
-      */
-      // window.scrollTo({
-      //   top: pos,
-      //   behavior: 'smooth'
-      // })
+
       this.smoothScoll(targetScrollTop)
     },
     scrollHandlerGlobal () {
