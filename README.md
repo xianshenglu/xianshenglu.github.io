@@ -1,5 +1,29 @@
-# xianshenglu.github.io
+# test
 
-# Homepage of Me, Check the [site][site]
+## Project setup
+```
+npm install
+```
 
-[site]: https://xianshenglu.github.io/home/dist/index.html
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your unit tests
+```
+npm run test:unit
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
