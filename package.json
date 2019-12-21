@@ -1,12 +1,12 @@
 {
-  "name": "test",
+  "name": "xianshenglu.github.io",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
+    "lint": "vue-cli-service lint --fix",
     "format": "prettier \"./**/*.*\" --write"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "@vue/cli-service": "^4.1.0",
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "@xianshenglu/eslint-config-vue": "^0.1.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.1",
