@@ -9,7 +9,7 @@
         :key="index"
         class="project-data-list"
       >
-        <img :src="item.img" class="list-img" />
+        <img :data-src="item.img" class="lazy list-img" />
         <div class="list-description">
           <h5 class="list-description-detail description-title">
             {{ item.description.title }}
