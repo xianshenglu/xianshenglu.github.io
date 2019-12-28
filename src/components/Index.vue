@@ -1,28 +1,32 @@
 <template>
- <section class="page page-index" >
-     <div class="page-index-detail index-avatar">
-        <img :src="index.avatar" class="index-avatar-img">
-     </div>
-     <div class="page-index-detail index-author">{{index.author}}</div>
-     <div class="page-index-detail index-career">{{index.career}}</div>
-     <div class="page-index-detail index-social">
-       <a v-for="(item,index) in index.social"
-       :key="index"
-       :href="item.url"
-       class="social-link"
-       target="_blank"
-       >
-        <svg :class="'icon social-link-img '+item.icon" aria-hidden="true">
-          <use :xlink:href="'#'+item.icon"></use>
+  <section class="page page-index">
+    <div class="page-index-detail index-avatar">
+      <img :src="index.avatar" class="index-avatar-img" />
+    </div>
+    <div class="page-index-detail index-author">{{ index.author }}</div>
+    <div class="page-index-detail index-career">{{ index.career }}</div>
+    <div class="page-index-detail index-social">
+      <!-- eslint-disable -->
+      <a
+        v-for="(item, index) in index.social"
+        :key="index"
+        :href="item.url"
+        class="social-link"
+        target="_blank"
+      >
+        <!-- eslint-enable -->
+        <svg :class="'icon social-link-img ' + item.icon" aria-hidden="true">
+          <use :xlink:href="'#' + item.icon"></use>
         </svg>
-       </a>
-     </div>
- </section>
+      </a>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'Index',
+  // eslint-disable-next-line vue/require-prop-types
   props: ['index']
 }
 </script>
@@ -30,13 +34,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .page-index {
-  position: relative;
+  box-sizing: border-box;
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-
-  box-sizing: border-box;
+  position: relative;
 }
 @keyframes changeOpacity {
   0% {
@@ -50,20 +53,19 @@ export default {
   }
 }
 .page-index::after {
-  content: '⇣';
-  position: absolute;
-  right: 0;
-  bottom: 40px;
-  left: 0;
-
-  width: 10px;
-  height: 40px;
-  margin: 0 auto;
-
   animation: 2s changeOpacity ease infinite;
-  text-align: center;
+  bottom: 40px;
+  content: '⇣';
 
   font-size: 30px;
+  height: 40px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+
+  width: 10px;
 }
 @media screen and (max-height: 600px) {
   /*iphone5*/
@@ -76,27 +78,25 @@ export default {
 }
 .page-index .index-author,
 .page-index .index-career {
-  padding: 0 10px;
-
   font-size: 20px;
   font-weight: 600;
   line-height: 30px;
+  padding: 0 10px;
 }
 .page-index .index-avatar {
-  width: 100px;
   height: 100px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
+  width: 100px;
 }
 
 .index-avatar .index-avatar-img,
 .social-link .social-link-img {
+  border-radius: 50%;
   display: block;
-
-  width: 100%;
   height: 100%;
 
-  border-radius: 50%;
+  width: 100%;
 }
 .page-index .index-social {
   display: flex;
@@ -106,27 +106,26 @@ export default {
   width: 100%;
 }
 .index-social .social-link {
-  position: relative;
-
   display: inline-block;
-
-  width: 40px;
   height: 40px;
   margin: 10px 20px;
+  position: relative;
+
+  width: 40px;
 }
 .social-link .social-link-img {
   border-radius: 0;
 }
 .social-link:hover .icon-github {
-  fill: #171515;
+  fill: rgb(23, 21, 21);
 }
 .social-link:hover .icon-blog {
-  fill: #52c5f9;
+  fill: rgb(82, 197, 249);
 }
 .social-link:hover .icon-segmentfault {
-  fill: #009a61;
+  fill: rgb(0, 154, 97);
 }
 .social-link:hover .icon-stackoverflow {
-  fill: #f48024;
+  fill: rgb(244, 128, 36);
 }
 </style>
