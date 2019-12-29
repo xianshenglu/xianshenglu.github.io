@@ -3,7 +3,7 @@ const blogImg = require('../images/blog.gif')
 const homepageImg = require('../images/homepage.gif')
 const toDoMvc = require('../images/to-do-mvc.gif')
 
-let authorData = {
+const authorData = {
   langs: [
     {
       name: '中文',

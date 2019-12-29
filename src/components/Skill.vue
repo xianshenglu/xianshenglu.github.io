@@ -4,7 +4,7 @@
      <h3 class="skill-name-text">{{skill.name}}</h3>
    </div>
    <ul class="page-skill-detail skill-native">
-     <li class="native-list" v-for="(item,index) in skill.data.native" :key="index">
+     <li v-for="(item,index) in skill.data.native" :key="index" class="native-list">
        <svg class="frame-list-percent" viewBox="0 0 31.831 31.831">
         <circle class="percent-circle" r="15.9155" cx="15.9155" cy="15.9155"
         :data-percent="item.percent" :data-stroke="item.color" />
@@ -15,7 +15,7 @@
      </li>
    </ul>
    <ul class="page-skill-detail skill-frame">
-      <li class="frame-list" v-for="(item,index) in skill.data.frame" :key="index">
+      <li v-for="(item,index) in skill.data.frame" :key="index" class="frame-list">
         <svg class="frame-list-percent" viewBox="0 0 31.831 31.831">
           <circle class="percent-circle" r="15.9155" cx="15.9155" cy="15.9155"
           :data-percent="item.percent"  :data-stroke="item.color" />
@@ -40,16 +40,16 @@ export default {
 .page-skill {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
 
   font-size: 30px;
+  justify-content: space-around;
 }
 .page-skill .page-skill-detail {
   flex: 1 1 auto;
 }
 .page-skill .skill-name {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 .skill-name .skill-name-text,
@@ -66,49 +66,49 @@ export default {
 }
 .skill-native .native-list,
 .skill-frame .frame-list {
-  position: relative;
+  align-items: center;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 150px;
   height: 150px;
+  justify-content: center;
   margin: 10px 20px;
   padding: 10px;
+  position: relative;
+
+  width: 150px;
 
   word-wrap: break-word;
 }
 @media screen and (max-width: 500px) {
   .skill-native .native-list,
   .skill-frame .frame-list {
-    width: 80px;
-    height: 80px;
 
     font-size: 18px;
+    height: 80px;
+    width: 80px;
   }
 }
 .native-list .frame-list-percent,
 .frame-list .frame-list-percent {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
+  background: rgb(255, 255, 255);
 
-  width: 100%;
+  border-radius: 50%;
   height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
 
   transform: rotate(-90deg);
 
-  border-radius: 50%;
-  background: #fff;
+  width: 100%;
+  z-index: -1;
 }
 .frame-list-percent .percent-circle {
-  transition: stroke-dasharray 2s ease;
 
-  fill: #fff;
+  fill: rgb(255, 255, 255);
+  stroke-dasharray: 0 100;
   /* stroke-width: 31.831; */
   stroke-width: 6;
-  stroke-dasharray: 0 100;
+  transition: stroke-dasharray 2s ease;
 }
 </style>

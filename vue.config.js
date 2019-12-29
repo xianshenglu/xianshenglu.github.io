@@ -4,5 +4,6 @@ module.exports = {
     config.externals({
       vue: 'Vue'
     })
-  }
+  },
+  publicPath: './'
 }
