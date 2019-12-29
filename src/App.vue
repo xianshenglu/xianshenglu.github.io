@@ -208,17 +208,17 @@ export default {
 
 <style>
 #app {
-  position: relative;
 
   box-sizing: border-box;
-  width: 100%;
-  height: 100%;
 
-  text-align: center;
-
-  color: #2c3e50;
+  color: rgb(44, 62, 80);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  position: relative;
+
+  text-align: center;
+  width: 100%;
 }
 </style>

@@ -8,8 +8,8 @@
    </div>
    <div class="page-intro-detail intro-data">
     <ul class="intro-data-detail intro-data-info">
-      <li class="info-list" v-for="(info,index) in introduction.data.info"
-    :key="index">
+      <li v-for="(info,index) in introduction.data.info" :key="index"
+    class="info-list">
         <svg :class="'icon info-list-img '+info.icon" aria-hidden="true">
           <use :xlink:href="'#'+info.icon"></use>
         </svg>
@@ -18,8 +18,8 @@
       </li>
     </ul>
     <ul class="intro-data-detail intro-data-contact">
-      <li class="contact-list" v-for="(contact,index) in introduction.data.contact"
-    :key="index">
+      <li v-for="(contact,index) in introduction.data.contact" :key="index"
+    class="contact-list">
         <svg :class="'icon contact-list-img '+contact.icon" aria-hidden="true">
           <use :xlink:href="'#'+contact.icon"></use>
         </svg>
@@ -47,18 +47,18 @@ export default {
 }
 .page-intro .intro-name,
 .page-intro .intro-value {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 .page-intro .intro-name {
   flex: 0.7 1 auto;
 }
 .intro-name .intro-name-text {
-  height: 40px;
 
   font-size: 30px;
   font-weight: 900;
+  height: 40px;
 }
 .page-intro .intro-value {
   align-items: flex-start;
@@ -72,8 +72,8 @@ export default {
   height: 20px;
 }
 .page-intro .intro-data {
-  display: flex;
   align-items: center;
+  display: flex;
   flex: 1 1 auto;
   flex-flow: column nowrap;
   justify-content: center;
@@ -101,8 +101,8 @@ export default {
 }
 .intro-data-info .info-list,
 .intro-data-contact .contact-list {
-  display: flex;
   align-items: center;
+  display: flex;
   flex: 0 1 auto;
   flex-flow: column nowrap;
 
@@ -114,18 +114,18 @@ export default {
     flex-flow: row nowrap;
     justify-content: flex-start;
 
-    min-width: 300px;
-
     line-height: 55px;
+
+    min-width: 300px;
   }
 }
 .info-list .info-list-img,
 .contact-list .contact-list-img {
   display: block;
+  height: 50px;
+  margin: 0 5px 5px;
 
   width: 50px;
-  height: 50px;
-  margin: 0 5px 5px 5px;
 }
 .info-list .info-list-name,
 .contact-list .contact-list-name {
@@ -149,19 +149,19 @@ export default {
   position: relative;
 }
 .contact-list .contact-list-value::before {
+  background: rgb(255, 255, 255);
   content: " X";
-  position: absolute;
-  top: 0;
+
+  font-size: 1.1em;
   left: 0;
 
-  width: 100%;
+  opacity: 1;
+  position: absolute;
+  top: 0;
 
   transition: all 0.5s ease;
 
-  opacity: 1;
-  background: #fff;
-
-  font-size: 1.1em;
+  width: 100%;
 }
 @media screen and (max-width: 600px) {
   .contact-list .contact-list-value::before {
@@ -169,8 +169,8 @@ export default {
   }
 }
 .contact-list:hover .contact-list-value::before {
-  opacity: 0;
   background: transparent;
+  opacity: 0;
 }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
  <nav class="unit unit-nav" @click="navChange">
   <ul class="nav-data">
-    <li :class="nav.checked+' nav-data-list'" :data-target-nav-id="nav.id" v-for="(nav,index) in navs" :key="index">
+    <li v-for="(nav,index) in navs" :key="index" :class="nav.checked+' nav-data-list'" :data-target-nav-id="nav.id">
         <span class="list-info">{{nav.name}}</span>
         <svg :class="'icon list-img '+nav.icon" aria-hidden="true">
           <use :xlink:href="'#'+nav.icon"></use>
@@ -26,14 +26,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .unit-nav {
-  position: fixed;
-  z-index: 99;
-  top: 50%;
-  right: 20px;
-
-  transform: translateY(-50%);
 
   font-size: 14px;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+  z-index: 99;
 }
 @media screen and (max-width: 1100px) {
   .unit-nav {
@@ -41,83 +41,83 @@ export default {
   }
 }
 .nav-data .nav-data-list {
+
+  cursor: pointer;
+  height: 40px;
   position: relative;
 
   width: 40px;
-  height: 40px;
-
-  cursor: pointer;
 }
 .nav-data .nav-data-list::before {
-  content: '';
 
-  width: 15px;
+  background: rgb(238, 238, 238);
+  content: '';
   height: 15px;
 
   transform: translate(-50%, -50%) scale(1);
 
-  background: #eee;
+  width: 15px;
 }
 
 .nav-data .nav-data-list::before,
 .nav-data-list .list-info,
 .nav-data-list .list-img {
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
 }
 .nav-data .nav-data-list::before,
 .nav-data-list .list-img {
-  transition: transform 0.5s ease;
 
   border-radius: 50%;
+  transition: transform 0.5s ease;
 }
 .nav-data .nav-data-list:hover::before {
   transform: translate(-50%, -50%) scale(0);
 }
 .nav-data-list .list-info {
-  left: 0;
-
-  height: 20px;
-  padding: 5px 5px;
-
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  transform: translate(0%, -50%);
-  word-break: keep-all;
-
-  opacity: 0;
-  border: 1px solid #000;
+  border: 1px solid rgb(0, 0, 0);
+  border-bottom-right-radius: 5px;
   border-left: none;
   border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
 
-  line-height: 20px;
-}
-.nav-data-list:hover .list-info {
-  transform: translate(-100%, -50%);
-  transform: translate(calc(-100% - 5px), -50%);
-
-  opacity: 1;
-}
-.nav-data-list .list-info::before {
-  content: '';
-  position: absolute;
-  top: 50%;
+  height: 20px;
   left: 0;
 
-  width: 21px;
+  line-height: 20px;
+
+  opacity: 0;
+  padding: 5px;
+  transform: translate(0%, -50%);
+
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  word-break: keep-all;
+}
+.nav-data-list:hover .list-info {
+
+  opacity: 1;
+  transform: translate(-100%, -50%);
+  transform: translate(calc(-100% - 5px), -50%);
+}
+.nav-data-list .list-info::before {
+
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-left: 1px solid rgb(0, 0, 0);
+  content: '';
   height: 21px;
+  left: 0;
+  position: absolute;
+  top: 50%;
 
   transform: translate(-50%, -50%) rotate(45deg);
 
-  border-bottom: 1px solid #000;
-  border-left: 1px solid #000;
+  width: 21px;
 }
 .nav-data-list .list-img {
-  width: 35px;
   height: 35px;
 
   transform: translate(-50%, -50%) scale(0);
+  width: 35px;
 }
 .nav-data-list.checked .list-img,
 .nav-data-list:hover .list-img {
