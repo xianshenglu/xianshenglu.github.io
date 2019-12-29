@@ -12,12 +12,17 @@
       src="https://www.googletagmanager.com/gtag/js?id=UA-155082921-1"
     ></script>
     <script>
+      const gaId = 'UA-155082921-1'
+      window['ga-disable-' + gaId] =
+        ['www.xianshenglu.xyz', 'xianshenglu.xyz'].indexOf(
+          window.location.hostname
+        ) < 0
       window.dataLayer = window.dataLayer || []
       function gtag() {
         dataLayer.push(arguments)
       }
       gtag('js', new Date())
-      gtag('config', 'UA-155082921-1', { site_speed_sample_rate: 100 })
+      gtag('config', gaId, { site_speed_sample_rate: 100 })
     </script>
     <!-- baidu statistics -->
     <script>
