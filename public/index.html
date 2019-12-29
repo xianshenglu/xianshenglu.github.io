@@ -6,6 +6,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>test</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-155082921-1"
+    ></script>
+    <script>
+      const gaId = 'UA-155082921-1'
+      window['ga-disable-' + gaId] =
+        ['www.xianshenglu.xyz', 'xianshenglu.xyz'].indexOf(
+          window.location.hostname
+        ) < 0
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', gaId, { site_speed_sample_rate: 100 })
+    </script>
+    <!-- baidu statistics -->
+    <script>
+      var _hmt = _hmt || []
+      ;(function() {
+        var hm = document.createElement('script')
+        hm.src = 'https://hm.baidu.com/hm.js?7e4104e94ccee8514bebb8a37a167730'
+        var s = document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(hm, s)
+      })()
+    </script>
   </head>
   <body>
     <noscript>

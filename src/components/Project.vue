@@ -189,6 +189,9 @@ _:-ms-lang(x),
   display: flex;
   margin-bottom: 20px;
 }
+.project-hint .project-hint-link:hover {
+  cursor: pointer;
+}
 .project-hint .project-hint-link {
   display: inline-block;
   vertical-align: top;

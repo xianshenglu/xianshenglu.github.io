@@ -22,12 +22,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .unit-lang {
-  position: fixed;
-  z-index: 99;
-  top: 10px;
-  right: 10px;
 
   font-size: 14px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 99;
 }
 @media screen and (max-width: 760px) {
   .unit-lang {
@@ -36,12 +36,12 @@ export default {
   }
 }
 .unit-lang .unit-lang-name {
-  padding: 5px;
 
   cursor: pointer;
-  transition: opacity 0.5s ease;
 
   opacity: 0.3;
+  padding: 5px;
+  transition: opacity 0.5s ease;
 }
 .unit-lang .unit-lang-name.checked {
   opacity: 1;
