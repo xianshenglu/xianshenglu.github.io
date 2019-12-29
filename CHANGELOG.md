@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.0(2019.12.29)
+
+- refactor with vue/cli@4.x
+- set ga-disable- in non production hostname
+
 ## v1.3(2019.12.29)
 
 - set gtag site_speed_sample_rate 100
