@@ -1,0 +1,35 @@
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body {
+
+  box-sizing: border-box;
+
+  font: 16px "Avenir", Helvetica, Arial, sans-serif;
+  position: relative;
+  width: 100%;
+}
+.page {
+
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+
+  /* border: 2px solid red; */
+}
+.hidden {
+  display: none;
+}
+.icon {
+
+  fill: currentColor;
+  height: 1em;
+  overflow: hidden;
+
+  vertical-align: -0.15em;
+
+  width: 1em;
+}
