@@ -24,11 +24,11 @@ npm run build
 npm run test:unit
 ```
 
-### Lints and fixes files
+### Online access
 
-```
-npm run lint
-```
+- https://xianshenglu.xyz
+
+Which is proxied by NGINX to https://xianshenglu.github.io/dist/.
 
 ### Customize configuration
 
