@@ -1,31 +1,51 @@
 <template>
- <section class="page page-skill" >
-   <div class="page-skill-detail skill-name">
-     <h3 class="skill-name-text">{{skill.name}}</h3>
-   </div>
-   <ul class="page-skill-detail skill-native">
-     <li class="native-list" v-for="(item,index) in skill.data.native" :key="index">
-       <svg class="frame-list-percent" viewBox="0 0 31.831 31.831">
-        <circle class="percent-circle" r="15.9155" cx="15.9155" cy="15.9155"
-        :data-percent="item.percent" :data-stroke="item.color" />
-       </svg>
-       <span class="native-list-name">
-         {{item.name.toUpperCase()}}
-       </span>
-     </li>
-   </ul>
-   <ul class="page-skill-detail skill-frame">
-      <li class="frame-list" v-for="(item,index) in skill.data.frame" :key="index">
+  <section class="page page-skill">
+    <div class="page-skill-detail skill-name">
+      <h3 class="skill-name-text">{{ skill.name }}</h3>
+    </div>
+    <ul class="page-skill-detail skill-native">
+      <li
+        v-for="(item, index) in skill.data.native"
+        :key="index"
+        class="native-list"
+      >
         <svg class="frame-list-percent" viewBox="0 0 31.831 31.831">
-          <circle class="percent-circle" r="15.9155" cx="15.9155" cy="15.9155"
-          :data-percent="item.percent"  :data-stroke="item.color" />
+          <circle
+            class="percent-circle"
+            r="15.9155"
+            cx="15.9155"
+            cy="15.9155"
+            :data-percent="item.percent"
+            :data-stroke="item.color"
+          />
         </svg>
-        <span class="frame-list-name">
-          {{item.name}}
+        <span class="native-list-name">
+          {{ item.name.toUpperCase() }}
         </span>
       </li>
-   </ul>
- </section>
+    </ul>
+    <ul class="page-skill-detail skill-frame">
+      <li
+        v-for="(item, index) in skill.data.frame"
+        :key="index"
+        class="frame-list"
+      >
+        <svg class="frame-list-percent" viewBox="0 0 31.831 31.831">
+          <circle
+            class="percent-circle"
+            r="15.9155"
+            cx="15.9155"
+            cy="15.9155"
+            :data-percent="item.percent"
+            :data-stroke="item.color"
+          />
+        </svg>
+        <span class="frame-list-name">
+          {{ item.name }}
+        </span>
+      </li>
+    </ul>
+  </section>
 </template>
 
 <script>
@@ -82,7 +102,6 @@ export default {
 @media screen and (max-width: 500px) {
   .skill-native .native-list,
   .skill-frame .frame-list {
-
     font-size: 18px;
     height: 80px;
     width: 80px;
@@ -104,7 +123,6 @@ export default {
   z-index: -1;
 }
 .frame-list-percent .percent-circle {
-
   fill: rgb(255, 255, 255);
   stroke-dasharray: 0 100;
   /* stroke-width: 31.831; */

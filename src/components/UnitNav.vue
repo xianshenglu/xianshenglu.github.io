@@ -1,14 +1,19 @@
 <template>
- <nav class="unit unit-nav" @click="navChange">
-  <ul class="nav-data">
-    <li :class="nav.checked+' nav-data-list'" :data-target-nav-id="nav.id" v-for="(nav,index) in navs" :key="index">
-        <span class="list-info">{{nav.name}}</span>
-        <svg :class="'icon list-img '+nav.icon" aria-hidden="true">
-          <use :xlink:href="'#'+nav.icon"></use>
+  <nav class="unit unit-nav" @click="navChange">
+    <ul class="nav-data">
+      <li
+        v-for="(nav, index) in navs"
+        :key="index"
+        :class="nav.checked + ' nav-data-list'"
+        :data-target-nav-id="nav.id"
+      >
+        <span class="list-info">{{ nav.name }}</span>
+        <svg :class="'icon list-img ' + nav.icon" aria-hidden="true">
+          <use :xlink:href="'#' + nav.icon"></use>
         </svg>
-    </li>
-  </ul>
- </nav>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -16,7 +21,7 @@ export default {
   name: 'UnitForLang',
   props: ['navs'],
   methods: {
-    navChange (event) {
+    navChange(event) {
       this.$emit('navChange', event)
     }
   }
@@ -26,7 +31,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .unit-nav {
-
   font-size: 14px;
   position: fixed;
   right: 20px;
@@ -41,7 +45,6 @@ export default {
   }
 }
 .nav-data .nav-data-list {
-
   cursor: pointer;
   height: 40px;
   position: relative;
@@ -49,7 +52,6 @@ export default {
   width: 40px;
 }
 .nav-data .nav-data-list::before {
-
   background: rgb(238, 238, 238);
   content: '';
   height: 15px;
@@ -68,7 +70,6 @@ export default {
 }
 .nav-data .nav-data-list::before,
 .nav-data-list .list-img {
-
   border-radius: 50%;
   transition: transform 0.5s ease;
 }
@@ -94,13 +95,11 @@ export default {
   word-break: keep-all;
 }
 .nav-data-list:hover .list-info {
-
   opacity: 1;
   transform: translate(-100%, -50%);
   transform: translate(calc(-100% - 5px), -50%);
 }
 .nav-data-list .list-info::before {
-
   border-bottom: 1px solid rgb(0, 0, 0);
   border-left: 1px solid rgb(0, 0, 0);
   content: '';

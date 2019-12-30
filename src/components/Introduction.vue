@@ -1,34 +1,43 @@
 <template>
- <section class="page page-intro" >
-   <div class="page-intro-detail intro-name">
-     <h3 class="intro-name-text" >{{introduction.name}}</h3>
-   </div>
-   <div class="page-intro-detail intro-value">
-     <div class="intro-value-text" >{{introduction.value}}</div>
-   </div>
-   <div class="page-intro-detail intro-data">
-    <ul class="intro-data-detail intro-data-info">
-      <li class="info-list" v-for="(info,index) in introduction.data.info"
-    :key="index">
-        <svg :class="'icon info-list-img '+info.icon" aria-hidden="true">
-          <use :xlink:href="'#'+info.icon"></use>
-        </svg>
-        <span class="info-list-name">{{info.name}}</span>
-        <span class="info-list-value">{{info.value}}</span>
-      </li>
-    </ul>
-    <ul class="intro-data-detail intro-data-contact">
-      <li class="contact-list" v-for="(contact,index) in introduction.data.contact"
-    :key="index">
-        <svg :class="'icon contact-list-img '+contact.icon" aria-hidden="true">
-          <use :xlink:href="'#'+contact.icon"></use>
-        </svg>
-        <span class="contact-list-name">{{contact.name}}</span>
-        <span class="contact-list-value">{{contact.value}}</span>
-      </li>
-    </ul>
-   </div>
- </section>
+  <section class="page page-intro">
+    <div class="page-intro-detail intro-name">
+      <h3 class="intro-name-text">{{ introduction.name }}</h3>
+    </div>
+    <div class="page-intro-detail intro-value">
+      <div class="intro-value-text">{{ introduction.value }}</div>
+    </div>
+    <div class="page-intro-detail intro-data">
+      <ul class="intro-data-detail intro-data-info">
+        <li
+          v-for="(info, index) in introduction.data.info"
+          :key="index"
+          class="info-list"
+        >
+          <svg :class="'icon info-list-img ' + info.icon" aria-hidden="true">
+            <use :xlink:href="'#' + info.icon"></use>
+          </svg>
+          <span class="info-list-name">{{ info.name }}</span>
+          <span class="info-list-value">{{ info.value }}</span>
+        </li>
+      </ul>
+      <ul class="intro-data-detail intro-data-contact">
+        <li
+          v-for="(contact, index) in introduction.data.contact"
+          :key="index"
+          class="contact-list"
+        >
+          <svg
+            :class="'icon contact-list-img ' + contact.icon"
+            aria-hidden="true"
+          >
+            <use :xlink:href="'#' + contact.icon"></use>
+          </svg>
+          <span class="contact-list-name">{{ contact.name }}</span>
+          <span class="contact-list-value">{{ contact.value }}</span>
+        </li>
+      </ul>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -55,7 +64,6 @@ export default {
   flex: 0.7 1 auto;
 }
 .intro-name .intro-name-text {
-
   font-size: 30px;
   font-weight: 900;
   height: 40px;
@@ -150,7 +158,7 @@ export default {
 }
 .contact-list .contact-list-value::before {
   background: rgb(255, 255, 255);
-  content: " X";
+  content: ' X';
 
   font-size: 1.1em;
   left: 0;
@@ -172,5 +180,4 @@ export default {
   background: transparent;
   opacity: 0;
 }
-
 </style>
