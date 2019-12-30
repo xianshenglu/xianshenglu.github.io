@@ -1,35 +1,52 @@
 <template>
- <section class="page page-project" >
-   <div class="page-project-detail project-name">
-     <h3 class="project-name-text">{{project.name}}</h3>
+  <section class="page page-project">
+    <div class="page-project-detail project-name">
+      <h3 class="project-name-text">{{ project.name }}</h3>
     </div>
-   <ul class="page-project-detail project-data">
-     <li v-for="(item,index) in project.data" :key="index" class="project-data-list">
-       <img :src="item.img" class="list-img">
-       <div class="list-description">
-         <h5 class="list-description-detail description-title">{{item.description.title}}</h5>
-         <ul class="list-description-detail description-highlight">
-           <li v-for="(highlight,hlIndex) in item.description.highlights"  :key="'highlight'+hlIndex" class="description-highlight-list">
-             <span class="highlight-list-icon"></span>
-             <span class="highlight-list-text">{{highlight}}</span>
-           </li>
-         </ul>
-       </div>
-       <div class="list-link">
-         <a :href="item.source.url" class="list-link-detail" target="_blank">{{item.source.name}}</a>
-         <a :href="item.preview.url" class="list-link-detail" target="_blank">{{item.preview.name}}</a>
-       </div>
-     </li>
-   </ul>
-   <div class="page-project-detail project-hint">
-     <span class="project-hint-name">{{project.more.name}}</span>
-     <a :href="project.more.url" class="project-hint-link" target="_blank">
-      <svg :class="'icon link-img '+project.more.icon" aria-hidden="true">
-          <use :xlink:href="'#'+project.more.icon"></use>
-      </svg>
-     </a>
-   </div>
- </section>
+    <ul class="page-project-detail project-data">
+      <li
+        v-for="(item, index) in project.data"
+        :key="index"
+        class="project-data-list"
+      >
+        <img :src="item.img" class="list-img" />
+        <div class="list-description">
+          <h5 class="list-description-detail description-title">
+            {{ item.description.title }}
+          </h5>
+          <ul class="list-description-detail description-highlight">
+            <li
+              v-for="(highlight, hlIndex) in item.description.highlights"
+              :key="'highlight' + hlIndex"
+              class="description-highlight-list"
+            >
+              <span class="highlight-list-icon"></span>
+              <span class="highlight-list-text">{{ highlight }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="list-link">
+          <a :href="item.source.url" class="list-link-detail" target="_blank">{{
+            item.source.name
+          }}</a>
+          <a
+            :href="item.preview.url"
+            class="list-link-detail"
+            target="_blank"
+            >{{ item.preview.name }}</a
+          >
+        </div>
+      </li>
+    </ul>
+    <div class="page-project-detail project-hint">
+      <span class="project-hint-name">{{ project.more.name }}</span>
+      <a :href="project.more.url" class="project-hint-link" target="_blank">
+        <svg :class="'icon link-img ' + project.more.icon" aria-hidden="true">
+          <use :xlink:href="'#' + project.more.icon"></use>
+        </svg>
+      </a>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -153,7 +170,6 @@ _:-ms-lang(x),
   width: 100%;
 }
 .list-link .list-link-detail {
-
   border: 1px solid black;
   border-radius: 20px;
   display: block;
@@ -179,7 +195,6 @@ _:-ms-lang(x),
   vertical-align: top;
 }
 .project-hint-link .link-img {
-
   border-radius: 50%;
   display: block;
   height: 25px;
