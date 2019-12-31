@@ -15,12 +15,6 @@
 <script>
 import LazyLoad from 'vanilla-lazyload'
 import authorData from './assets/js/authorData.js'
-import UnitLang from './components/UnitLang'
-import UnitNav from './components/UnitNav'
-import Index from './components/Index'
-import Introduction from './components/Introduction'
-import Skill from './components/Skill'
-import Project from './components/Project'
 function $(str) {
   return Array.from(document.querySelectorAll(str))
 }
@@ -28,12 +22,19 @@ function $(str) {
 export default {
   name: 'App',
   components: {
-    UnitLang,
-    Index,
-    Introduction,
-    Skill,
-    Project,
-    UnitNav
+    // todo remote scroll position remember, then use lazy load, and add priority
+    Index: () => import(/* webpackChunkName: "Index" */ './components/Index'),
+    UnitLang: () =>
+      import(/* webpackChunkName: "UnitLang" */ './components/UnitLang'),
+    Introduction: () =>
+      import(
+        /* webpackChunkName: "Introduction" */ './components/Introduction'
+      ),
+    Skill: () => import(/* webpackChunkName: "Skill" */ './components/Skill'),
+    Project: () =>
+      import(/* webpackChunkName: "Project" */ './components/Project'),
+    UnitNav: () =>
+      import(/* webpackChunkName: "UnitNav" */ './components/UnitNav')
   },
   data: function() {
     return {
