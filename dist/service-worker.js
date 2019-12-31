@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.b6f1e92ad57c0a1388993a15735947b1.js"
+  "precache-manifest.339dea75ec02b7bfc6e2c6f49687c540.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "xianshenglu.github.io"});
