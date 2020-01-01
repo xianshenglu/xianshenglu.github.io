@@ -1,28 +1,32 @@
 <template>
- <section class="page page-index" >
-     <div class="page-index-detail index-avatar">
-        <img :src="index.avatar" class="index-avatar-img">
-     </div>
-     <div class="page-index-detail index-author">{{index.author}}</div>
-     <div class="page-index-detail index-career">{{index.career}}</div>
-     <div class="page-index-detail index-social">
-       <a v-for="(item,index) in index.social"
-       :key="index"
-       :href="item.url"
-       class="social-link"
-       target="_blank"
-       >
-        <svg :class="'icon social-link-img '+item.icon" aria-hidden="true">
-          <use :xlink:href="'#'+item.icon"></use>
+  <section class="page page-index">
+    <div class="page-index-detail index-avatar">
+      <img :src="index.avatar" class="index-avatar-img" />
+    </div>
+    <div class="page-index-detail index-author">{{ index.author }}</div>
+    <div class="page-index-detail index-career">{{ index.career }}</div>
+    <div class="page-index-detail index-social">
+      <!-- eslint-disable -->
+      <a
+        v-for="(item, index) in index.social"
+        :key="index"
+        :href="item.url"
+        class="social-link"
+        target="_blank"
+      >
+        <!-- eslint-enable -->
+        <svg :class="'icon social-link-img ' + item.icon" aria-hidden="true">
+          <use :xlink:href="'#' + item.icon"></use>
         </svg>
-       </a>
-     </div>
- </section>
+      </a>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'Index',
+  // eslint-disable-next-line vue/require-prop-types
   props: ['index']
 }
 </script>
@@ -30,7 +34,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .page-index {
-
   box-sizing: border-box;
 
   display: flex;
@@ -50,7 +53,6 @@ export default {
   }
 }
 .page-index::after {
-
   animation: 2s changeOpacity ease infinite;
   bottom: 40px;
   content: '⇣';
@@ -76,7 +78,6 @@ export default {
 }
 .page-index .index-author,
 .page-index .index-career {
-
   font-size: 20px;
   font-weight: 600;
   line-height: 30px;
@@ -91,7 +92,6 @@ export default {
 
 .index-avatar .index-avatar-img,
 .social-link .social-link-img {
-
   border-radius: 50%;
   display: block;
   height: 100%;
@@ -106,7 +106,6 @@ export default {
   width: 100%;
 }
 .index-social .social-link {
-
   display: inline-block;
   height: 40px;
   margin: 10px 20px;

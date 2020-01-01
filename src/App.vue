@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import LazyLoad from 'vanilla-lazyload'
 import authorData from './assets/js/authorData.js'
 import UnitLang from './components/UnitLang'
 import UnitNav from './components/UnitNav'
@@ -62,6 +63,10 @@ export default {
         { capture: true },
         true
       )
+    })
+    // eslint-disable-next-line no-new
+    new LazyLoad({
+      elements_selector: '.lazy'
     })
   },
   updated() {},
@@ -164,8 +169,10 @@ export default {
     scrollHandlerForSkill() {
       const skillBoundingClientTop = $('#skill')[0].getBoundingClientRect().top
       const viewportHeight = $('html')[0].clientHeight
-      const isInView = Boolean(skillBoundingClientTop >= -viewportHeight / 1.3 &&
-        skillBoundingClientTop <= viewportHeight / 2)
+      const isInView = Boolean(
+        skillBoundingClientTop >= -viewportHeight / 1.3 &&
+          skillBoundingClientTop <= viewportHeight / 2
+      )
       showSkillPercent(isInView)
 
       function showSkillPercent(isInView) {
@@ -208,7 +215,6 @@ export default {
 
 <style>
 #app {
-
   box-sizing: border-box;
 
   color: rgb(44, 62, 80);

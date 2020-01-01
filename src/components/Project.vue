@@ -9,7 +9,7 @@
         :key="index"
         class="project-data-list"
       >
-        <img :src="item.img" class="list-img" />
+        <img :data-src="item.img" class="lazy list-img" />
         <div class="list-description">
           <h5 class="list-description-detail description-title">
             {{ item.description.title }}
@@ -52,6 +52,7 @@
 <script>
 export default {
   name: 'Project',
+  // eslint-disable-next-line vue/require-prop-types
   props: ['project']
 }
 </script>
@@ -66,6 +67,7 @@ export default {
   justify-content: center;
   min-height: 100vh;
 }
+/* stylelint-disable-next-line  */
 _:-ms-lang(x),
 .page-project {
   /*IE10 and Edge will ignore flex property with height:auto*/
@@ -170,7 +172,7 @@ _:-ms-lang(x),
   width: 100%;
 }
 .list-link .list-link-detail {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 20px;
   display: block;
   flex: 1 0 auto;
@@ -193,6 +195,9 @@ _:-ms-lang(x),
 .project-hint .project-hint-link {
   display: inline-block;
   vertical-align: top;
+}
+.project-hint .project-hint-link:hover {
+  cursor: pointer;
 }
 .project-hint-link .link-img {
   border-radius: 50%;
