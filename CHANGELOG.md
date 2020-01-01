@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v2.3.0(2020.1.1)
+
+### feat
+
+- add images lazy load
+
 ## v2.2.0(2019.12.31)
 
 ### perf
