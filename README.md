@@ -39,3 +39,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] optimize iconfont size
 - [ ] replace static files path to jsdelivr
 - [ ] replace `publicPath` to `/` and modify nginx config
+- [ ] add gif before static resources loaded.
