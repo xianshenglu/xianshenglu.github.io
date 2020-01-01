@@ -33,3 +33,10 @@ Which is proxied by NGINX to https://xianshenglu.github.io/dist/.
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### TODOS
+
+- [ ] optimize iconfont size
+- [ ] replace static files path to jsdelivr
+- [ ] replace `publicPath` to `/` and modify nginx config
+- [ ] add gif before static resources loaded.
