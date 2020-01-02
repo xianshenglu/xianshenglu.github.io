@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import LazyLoad from 'vanilla-lazyload'
 import authorData from './assets/js/authorData.js'
 function $(str) {
   return Array.from(document.querySelectorAll(str))
@@ -64,10 +63,6 @@ export default {
         { capture: true },
         true
       )
-    })
-    // eslint-disable-next-line no-new
-    new LazyLoad({
-      elements_selector: '.lazy'
     })
   },
   updated() {},

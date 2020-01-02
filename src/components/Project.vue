@@ -53,7 +53,10 @@
 export default {
   name: 'Project',
   // eslint-disable-next-line vue/require-prop-types
-  props: ['project']
+  props: ['project'],
+  mounted() {
+    this.$lazyLoadVm.update()
+  }
 }
 </script>
 

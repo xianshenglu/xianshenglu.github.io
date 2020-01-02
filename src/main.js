@@ -7,8 +7,13 @@ import '../public/js/iconfont.js'
 import './assets/css/base.css'
 import './assets/css/reset.css'
 
-Vue.config.productionTip = false
+import LazyLoad from 'vanilla-lazyload'
 
+Vue.prototype.$lazyLoadVm = new LazyLoad({
+  elements_selector: '.lazy'
+})
+
+Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   render: h => h(App)
