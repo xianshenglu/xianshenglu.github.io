@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v2.4.0(2020.1.2)
+
+### feat
+
+- add route lazy load
+
 ## v2.3.0(2020.1.1)
 
 ### feat
