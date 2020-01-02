@@ -40,3 +40,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] replace static files path to jsdelivr
 - [ ] replace `publicPath` to `/` and modify nginx config
 - [ ] add gif before static resources loaded.
+- [ ] add refresh button when there is new version.
+- [ ] add network status bar.
