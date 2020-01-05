@@ -4,8 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import './registerServiceWorker'
 import '../public/js/iconfont.js'
-import './assets/css/base.css'
-import './assets/css/reset.css'
+import './styles/index.scss'
 
 import LazyLoad from 'vanilla-lazyload'
 
