@@ -9,6 +9,8 @@
     />
     <Skill id="skill" :skill="findSection('skill')" />
     <Project id="project" :project="findSection('project')" />
+    <!-- todo import on demand -->
+    <UpgradeButton :isVisible.sync="isUpgradeReady" />
   </main>
 </template>
 
@@ -33,13 +35,18 @@ export default {
     Project: () =>
       import(/* webpackChunkName: "Project" */ './components/Project'),
     UnitNav: () =>
-      import(/* webpackChunkName: "UnitNav" */ './components/UnitNav')
+      import(/* webpackChunkName: "UnitNav" */ './components/UnitNav'),
+    UpgradeButton: () =>
+      import(
+        /* webpackChunkName: "UpgradeButton" */ './components/UpgradeButton'
+      )
   },
   data: function() {
     return {
       currentNavId: 'index',
       animationFrameId: 1,
-      authorData
+      authorData,
+      isUpgradeReady: false
     }
   },
   computed: {
@@ -53,6 +60,11 @@ export default {
   },
   created() {
     this.langBackToLast()
+    // won't be late in created?
+    this.listenServiceWorkerRegistrationEvents()
+  },
+  destroyed() {
+    this.removeServiceWorkerRegistrationEvents()
   },
   mounted() {
     this.$nextTick(function() {
@@ -65,8 +77,26 @@ export default {
       )
     })
   },
-  updated() {},
   methods: {
+    listenServiceWorkerRegistrationEvents() {
+      navigator.serviceWorker.getRegistration().then(registration => {
+        if (registration === null) {
+          return
+        }
+        registration.addEventListener('updatefound', this.onServiceWorkerMsg)
+      })
+    },
+    removeServiceWorkerRegistrationEvents() {
+      navigator.serviceWorker.getRegistration().then(registration => {
+        if (registration === null) {
+          return
+        }
+        registration.removeEventListener('updatefound', this.onServiceWorkerMsg)
+      })
+    },
+    onServiceWorkerMsg(event) {
+      this.isUpgradeReady = true
+    },
     closest(ele, selector) {
       const targetEle = $(selector)
       while (ele.tagName.toLowerCase() !== 'html') {

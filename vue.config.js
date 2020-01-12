@@ -5,5 +5,13 @@ module.exports = {
       vue: 'Vue'
     })
   },
-  publicPath: './'
+  publicPath: './',
+  pwa: {
+    themeColor: '#4DBA87',
+    msTileColor: '#fff',
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      swSrc: './public/service-worker.js'
+    }
+  }
 }
