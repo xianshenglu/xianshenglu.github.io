@@ -31,9 +31,11 @@
         var hm = document.createElement('script')
         hm.src = 'https://hm.baidu.com/hm.js?7e4104e94ccee8514bebb8a37a167730'
         var s = document.getElementsByTagName('script')[0]
+        // test if this operation will block dom parsing.
         s.parentNode.insertBefore(hm, s)
       })()
     </script>
+    <script src="<%= BASE_URL %>js/iconfont.js" async></script>
   </head>
   <body>
     <noscript>
