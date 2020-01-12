@@ -37,8 +37,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### TODOS
 
 - [ ] optimize iconfont size
-- [ ] replace static files path to jsdelivr
+- [x] replace static files path to jsdelivr
+- [ ] let service worker take control of static resources
 - [ ] replace `publicPath` to `/` and modify nginx config
 - [ ] add gif before static resources loaded.
-- [ ] add refresh button when there is new version.
+- [x] add refresh button when there is new version.
 - [ ] add network status bar.
+- [ ] avoid server 301
+- [ ] reduce server waiting time.
