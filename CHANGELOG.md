@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## v2.5.0(2020.1.12)
+
+### feat
+
+- show UpgradeButton when app has new version
+
+### perf
+
+- move iconfont.js from main.js to index.html
+- replace publicPath jsdelivr path
+
 ## v2.4.0(2020.1.2)
 
 ### feat
