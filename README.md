@@ -38,10 +38,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - [ ] optimize iconfont size
 - [x] replace static files path to jsdelivr
-- [ ] let service worker take control of static resources
-- [ ] replace `publicPath` to `/` and modify nginx config
-- [ ] add gif before static resources loaded.
+- [x] let service worker take control of static resources
+- [x] replace `publicPath` to `/` and modify nginx config
 - [x] add refresh button when there is new version.
 - [ ] add network status bar.
-- [ ] avoid server 301
+- [x] avoid server 301
 - [ ] reduce server waiting time.
