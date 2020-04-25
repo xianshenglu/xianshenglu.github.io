@@ -9,10 +9,12 @@ module.exports = {
     'https://cdn.jsdelivr.net/gh/xianshenglu/xianshenglu.github.io/dist/',
   pwa: {
     themeColor: '#4DBA87',
-    msTileColor: '#fff',
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
       swSrc: './public/service-worker.js'
+    },
+    manifestOptions: {
+      background_color: '#ffffff'
     }
   }
 }
