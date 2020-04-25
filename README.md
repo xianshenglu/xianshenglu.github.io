@@ -37,6 +37,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### TODOS
 
 - [ ] optimize iconfont size
+- [ ] cache `index.html`, `iconfont`, `vue.min.js`, etc.
+- [ ] fix `ServiceWorker` not work at some devices.
+- [ ] add server push
+- [ ] add install notification in desktop and other platforms.
 - [x] replace static files path to jsdelivr
 - [x] let service worker take control of static resources
 - [x] replace `publicPath` to `/` and modify nginx config
