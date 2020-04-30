@@ -5,8 +5,7 @@ module.exports = {
       vue: 'Vue'
     })
   },
-  publicPath:
-    'https://cdn.jsdelivr.net/gh/xianshenglu/xianshenglu.github.io/dist/',
+  publicPath: './',
   pwa: {
     themeColor: '#4DBA87',
     workboxPluginMode: 'InjectManifest',
