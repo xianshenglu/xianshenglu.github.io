@@ -38,9 +38,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - [ ] optimize iconfont size
 - [x] cache `index.html`, `iconfont`, `vue.min.js`, etc.
-- [ ] fix `ServiceWorker` not work at some devices.
+- [ ] fix github action
+- [x] fix `ServiceWorker` not work at some devices.
 - [ ] add server push
-- [ ] customize install notification in desktop and other platforms.
+- [ ] customize add to home screen button in desktop and mobile.
 - [x] replace static files path to jsdelivr
 - [x] let service worker take control of static resources
 - [x] replace `publicPath` to `/` and modify nginx config
