@@ -37,10 +37,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### TODOS
 
 - [ ] optimize iconfont size
+- [ ] split lib into separate url or use cdn?
+- [ ] take better control of modules. For example, delay unimportant modules load and add loading, load hero elements first, etc.
 - [x] cache `index.html`, `iconfont`, `vue.min.js`, etc.
 - [ ] fix github action
 - [x] fix `ServiceWorker` not work at some devices.
-- [ ] add server push
+- [x] add server push
 - [ ] customize add to home screen button in desktop and mobile.
 - [x] replace static files path to jsdelivr
 - [x] let service worker take control of static resources
