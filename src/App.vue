@@ -80,7 +80,13 @@ export default {
   methods: {
     listenServiceWorkerRegistrationEvents() {
       navigator.serviceWorker.getRegistration().then(registration => {
-        if (registration === null) {
+        // if a developer unregistered the previous serviceWorker
+        // the registration would be undefined, we need to register manually
+        // Also, in firefox, it wouldn't work unless we register manually.
+        if ([null, undefined].includes(registration)) {
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+          }
           return
         }
         registration.addEventListener('updatefound', this.onServiceWorkerMsg)
