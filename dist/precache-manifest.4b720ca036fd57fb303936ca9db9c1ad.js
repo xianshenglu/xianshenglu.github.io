@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/UpgradeButton.c5f866dc.css"
   },
   {
-    "revision": "d55aface4c597d4a03e9",
+    "revision": "6297db5292c707efb85d",
     "url": "css/app.fb6914dc.css"
   },
   {
@@ -48,7 +48,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/to-do-mvc.b223dc08.gif"
   },
   {
-    "revision": "f8120fae09c7de4554ea22c2eafbac4b",
+    "revision": "f4f47c859ce5ba2c9687d87541e71447",
     "url": "index.html"
   },
   {
@@ -80,8 +80,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/UpgradeButton.dcfb5c19.js"
   },
   {
-    "revision": "d55aface4c597d4a03e9",
-    "url": "js/app.a8c4f16f.js"
+    "revision": "6297db5292c707efb85d",
+    "url": "js/app.906d95f1.js"
   },
   {
     "revision": "ec251021f1b765425895",
