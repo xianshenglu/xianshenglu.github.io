@@ -44,7 +44,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/to-do-mvc.b223dc08.gif"
   },
   {
-    "revision": "19b7d5cfa2c542bb7c49f13ca103d1f2",
+    "revision": "81ef3024efaa8ab6e7dbfec323cbe693",
     "url": "index.html"
   },
   {
