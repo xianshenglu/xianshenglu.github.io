@@ -40,8 +40,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] split lib into separate url?
 - [.] take better control of modules. For example, delay unimportant modules load and add loading, load hero elements first, etc.
 - [ ] poll service worker or support show update tips without reload?
+- [ ] reduce dns time
 - [x] cache `index.html`, `iconfont`, `vue.min.js`, etc.
-- [ ] fix github action
+- [x] fix github action
 - [x] fix `ServiceWorker` not work at some devices.
 - [x] add server push for crucial resources like vue.min.js and other resources instead of cdn because cdn need extra dns and tcp.
 - [ ] customize add to home screen button in desktop and mobile.
