@@ -5,13 +5,13 @@ name: Vue Project CI
 
 on:
   push:
-    branches: [v2.8.2]
+    branches: [master]
   pull_request:
-    branches: [v2.8.2]
+    branches: [master]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     strategy:
       matrix:
@@ -28,5 +28,13 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Build 🔧
+      - name: Build
         run: npm run build
+
+      - name: Deploy Files
+        run: |
+          git config --local user.email "xianshenglu@qq.com"
+          git config --local user.name "xianshenglu"
+          git add dist
+          git commit -m "chore: release by github actions"
+          git push
