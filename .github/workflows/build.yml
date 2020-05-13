@@ -36,5 +36,4 @@ jobs:
           git config --local user.email "xianshenglu@qq.com"
           git config --local user.name "xianshenglu"
           git add dist
-          git commit -m "chore: release by github actions"
-          git push
+          git diff --quiet && git diff --staged --quiet || git commit -am "chore: release by github actions" && git push
