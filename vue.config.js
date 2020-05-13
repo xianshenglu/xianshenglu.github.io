@@ -20,9 +20,10 @@ module.exports = {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name(module) {
-            const packageName = module.resource.match(
-              /\\node_modules\\([^\\]*?)\\/
-            )[1]
+            // windows 下的路径是 \\node_modules\\
+            // linux 下的路径是 /node_modules/，这里的正则兼容两种场景
+            const reg = /[\\/]node_modules[\\/]([^/]*?)[\\/]/
+            const packageName = module.resource.match(reg)[1]
             // npm package names are URL-safe, but some servers don't like @ symbols
             return `npm-${packageName.replace('@', '-')}`
           },
