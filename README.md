@@ -1,28 +1,6 @@
-# test
+# Homepage
 
-## Project setup
-
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your unit tests
-
-```
-npm run test:unit
-```
+![CI](https://github.com/xianshenglu/xianshenglu.github.io/workflows/Vue%20Project%20CI/badge.svg?branch=master)
 
 ### Online access
 
@@ -30,7 +8,31 @@ npm run test:unit
 
 Which is proxied by NGINX to https://xianshenglu.github.io/dist/.
 
-### Customize configuration
+### Project setup
+
+```
+npm install
+```
+
+#### Compiles and hot-reloads for development
+
+```
+npm run serve
+```
+
+#### Compiles and minifies for production
+
+```
+npm run build
+```
+
+#### Run your unit tests
+
+```
+npm run test:unit
+```
+
+#### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
@@ -38,7 +40,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - [ ] optimize iconfont size
 - [x] split lib into separate url?
-- [.] take better control of modules. For example, delay unimportant modules load and add loading, load hero elements first, etc.
+- [ ] take better control of modules. For example, delay unimportant modules load and add loading, load hero elements first, etc.
 - [ ] poll service worker or support show update tips without reload?
 - [ ] reduce dns time
 - [x] cache `index.html`, `iconfont`, `vue.min.js`, etc.
@@ -52,4 +54,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] add refresh button when there is new version.
 - [ ] add network status bar.
 - [x] avoid server 301
-- [ ] reduce server waiting time.
+- [x] reduce server waiting time.
