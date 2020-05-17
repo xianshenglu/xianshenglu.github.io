@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import authorData from './assets/js/authorData.js'
+import authorData from './constants/authorData.js'
 function $(str) {
   return Array.from(document.querySelectorAll(str))
 }
