@@ -65,6 +65,12 @@ export default {
   },
   destroyed() {
     this.removeServiceWorkerRegistrationEvents()
+    window.removeEventListener(
+      'scroll',
+      this.scrollHandlerGlobal,
+      { capture: true },
+      true
+    )
   },
   mounted() {
     this.$nextTick(function() {
@@ -238,9 +244,6 @@ export default {
         this.sections[0].checked = 'checked'
       }
     }
-  },
-  destoryed() {
-    window.removeEventListener('scroll', this.scrollHandlerGlobal, true)
   }
 }
 </script>
