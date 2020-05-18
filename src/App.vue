@@ -16,15 +16,15 @@
 
 <script>
 import authorData from './constants/authorData.js'
+import Index from './components/Index'
 function $(str) {
   return Array.from(document.querySelectorAll(str))
 }
-
 export default {
   name: 'App',
   components: {
     // todo remote scroll position remember, then use lazy load, and add priority
-    Index: () => import(/* webpackChunkName: "Index" */ './components/Index'),
+    Index,
     UnitLang: () =>
       import(/* webpackChunkName: "UnitLang" */ './components/UnitLang'),
     Introduction: () =>
