@@ -38,13 +38,15 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODOS
 
-- [ ] poll service worker or support show update tips without reload?
-- [ ] extract production config from vue.config.js
 - [ ] fix firefox https security.ssl.enable_ocsp_must_staple bug
-- [ ] add dynamic background before loaded
+- [x] add dynamic background before loaded
+- [ ] load core-js on demand by userAgent
+- [ ] poll service worker or support show update tips without reload?
+- [ ] replace service-worker dependencies URL from workbox-cdn to other cdn
 - [ ] reduce dns time
 - [ ] take better control of modules. For example, delay unimportant modules load and add loading, load hero elements first, etc.
 - [ ] consider the effect of 1M bandwidth
+- [ ] extract production config from vue.config.js
 - [ ] how to push all resources under specific folder with server push
 - [ ] optimize iconfont size
 - [ ] customize add to home screen button in desktop and mobile.
