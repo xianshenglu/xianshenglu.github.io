@@ -1,4 +1,6 @@
 const serverPushPath = 'server-push'
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
   lintOnSave: false,
   css: {
@@ -8,6 +10,9 @@ module.exports = {
   },
   chainWebpack: config => {
     config.output.filename(`${serverPushPath}/js/[name].js`)
+    if (isDev) {
+      return
+    }
     config.optimization.splitChunks({
       cacheGroups: {
         common: {
