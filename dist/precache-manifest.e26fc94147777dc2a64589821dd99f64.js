@@ -1,30 +1,26 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3e5b7351c831be2eb22e",
-    "url": "css/Index.10758a35.css"
-  },
-  {
-    "revision": "75bbcc86a01e58b04fdb",
+    "revision": "cd490424e4ab9b85803e",
     "url": "css/Introduction.1200887b.css"
   },
   {
-    "revision": "19b31b05d56b8850c454",
+    "revision": "73e941c23d673090c4db",
     "url": "css/Project.316d4367.css"
   },
   {
-    "revision": "262c5a86be2e0dc5c253",
+    "revision": "bc40a1d466280e83da27",
     "url": "css/Skill.c596ace9.css"
   },
   {
-    "revision": "470e97c3380fbc6b4acb",
+    "revision": "0c647d52c5cc97237f1f",
     "url": "css/UnitLang.0a71ac37.css"
   },
   {
-    "revision": "0a1072d1ed2ea29b9e1d",
+    "revision": "ff5fdfd524cf9782014d",
     "url": "css/UnitNav.4467e64d.css"
   },
   {
-    "revision": "8a81a1175e04e458d895",
+    "revision": "147bacc3492ab6bde08a",
     "url": "css/UpgradeButton.d1392748.css"
   },
   {
@@ -44,36 +40,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/to-do-mvc.b223dc08.gif"
   },
   {
-    "revision": "83deb4bbb354813a3cdbfa7bca74ee63",
+    "revision": "cf1fdc78283bdb5dd10b45dc4fff2000",
     "url": "index.html"
   },
   {
-    "revision": "3e5b7351c831be2eb22e",
-    "url": "js/Index.a531fb6a.js"
+    "revision": "cd490424e4ab9b85803e",
+    "url": "js/Introduction.244c3b8a.js"
   },
   {
-    "revision": "75bbcc86a01e58b04fdb",
-    "url": "js/Introduction.aad0f117.js"
+    "revision": "73e941c23d673090c4db",
+    "url": "js/Project.c3a4b19b.js"
   },
   {
-    "revision": "19b31b05d56b8850c454",
-    "url": "js/Project.61b795f0.js"
+    "revision": "bc40a1d466280e83da27",
+    "url": "js/Skill.43880c7d.js"
   },
   {
-    "revision": "262c5a86be2e0dc5c253",
-    "url": "js/Skill.542210c1.js"
+    "revision": "0c647d52c5cc97237f1f",
+    "url": "js/UnitLang.58ed8f7c.js"
   },
   {
-    "revision": "470e97c3380fbc6b4acb",
-    "url": "js/UnitLang.b0013c29.js"
+    "revision": "ff5fdfd524cf9782014d",
+    "url": "js/UnitNav.10e60a30.js"
   },
   {
-    "revision": "0a1072d1ed2ea29b9e1d",
-    "url": "js/UnitNav.18c9a6dd.js"
-  },
-  {
-    "revision": "8a81a1175e04e458d895",
-    "url": "js/UpgradeButton.ac61e2d0.js"
+    "revision": "147bacc3492ab6bde08a",
+    "url": "js/UpgradeButton.a3968683.js"
   },
   {
     "revision": "49e42f4eff88e3337169b8970ce67808",
@@ -88,11 +80,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "robots.txt"
   },
   {
-    "revision": "4e96d2f9337cfdedb145",
+    "revision": "d142573a6b620433cfeb",
     "url": "server-push/css/app.css"
   },
   {
-    "revision": "4e96d2f9337cfdedb145",
+    "revision": "d142573a6b620433cfeb",
     "url": "server-push/js/app.js"
   },
   {
@@ -104,7 +96,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "server-push/js/npm-vue.js"
   },
   {
-    "revision": "d009bc1fc1264cb139b67c57944a7d3c",
+    "revision": "1c158626b2fa25d4a0755d16a5da5065",
     "url": "service-worker.js"
   }
 ]);
