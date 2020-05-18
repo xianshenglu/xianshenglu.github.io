@@ -6,11 +6,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>Hey, man</title>
-    <!-- browser wouldn't do the dns-prefetch job automatically, though script is in the html-->
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
+    <!--googletagmanager would load google-analytics later -->
     <link rel="prefetch" href="https://www.google-analytics.com/analytics.js" />
-    <!-- workbox dns -->
-    <link rel="dns-prefetch" href="https://storage.googleapis.com/" />
+    <!-- workbox would load scripts below later -->
+    <link
+      rel="prefetch"
+      href="https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-precaching.prod.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-core.prod.js"
+    />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
