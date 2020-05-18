@@ -38,8 +38,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODOS
 
-- [ ] fix firefox https security.ssl.enable_ocsp_must_staple bug
+- [x] fix firefox https security.ssl.enable_ocsp_must_staple bug
 - [x] add dynamic background before loaded
+- [ ] add server push in 301 redirect to https
 - [ ] load core-js on demand by userAgent
 - [ ] poll service worker or support show update tips without reload?
 - [ ] replace service-worker dependencies URL from workbox-cdn to other cdn
