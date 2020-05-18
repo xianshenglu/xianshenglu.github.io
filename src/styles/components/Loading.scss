@@ -1,0 +1,46 @@
+@import '../common/variables';
+.Loading {
+  align-items: flex-end;
+  display: flex;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.Loading__text {
+  color: $--loading-color;
+  margin-left: 10px;
+}
+.Loading__bounceBallWrapper {
+  height: 40px;
+  position: relative;
+  width: $--loading-ball-width;
+}
+.Loading__bounceBallWrapper::before {
+  animation: bounce 500ms alternate infinite ease;
+  background-color: $--loading-color;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: $--loading-ball-height;
+  position: absolute;
+  top: 0;
+  width: $--loading-ball-width;
+}
+
+@keyframes bounce {
+  0% {
+    border-radius: 60px 60px 20px 20px;
+    height: 5px;
+    top: $--loading-bounce-height;
+    transform: scaleX(2);
+  }
+  35% {
+    border-radius: 50%;
+    height: $--loading-ball-height;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
