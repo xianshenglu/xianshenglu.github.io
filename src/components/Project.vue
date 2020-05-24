@@ -9,7 +9,13 @@
         :key="index"
         class="project-data-list"
       >
-        <img :data-src="item.img" class="lazy list-img" />
+        <video
+          :data-src="item.img"
+          autoplay
+          loop
+          muted
+          class="lazy list-img"
+        ></video>
         <div class="list-description">
           <h5 class="list-description-detail description-title">
             {{ item.description.title }}
@@ -195,10 +201,12 @@ _:-ms-lang(x),
 .project-hint .project-hint-link:hover {
   cursor: pointer;
 }
+/* stylelint-disable-next-line */
 .project-hint .project-hint-link {
   display: inline-block;
   vertical-align: top;
 }
+/* stylelint-disable-next-line */
 .project-hint .project-hint-link:hover {
   cursor: pointer;
 }

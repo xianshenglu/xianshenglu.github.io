@@ -1,7 +1,7 @@
-const avatar = require('../assets/images/avator.png')
-const blogImg = require('../assets/images/blog.gif')
-const homepageImg = require('../assets/images/homepage.gif')
-const toDoMvc = require('../assets/images/to-do-mvc.gif')
+const avatar = require('../assets/images/avator.jpg')
+const blogImg = require('../assets/images/blog.mp4')
+const homepageImg = require('../assets/images/homepage.mp4')
+const toDoMvc = require('../assets/images/to-do-mvc.mp4')
 
 const authorData = {
   langs: [
