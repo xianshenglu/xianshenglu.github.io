@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/Introduction.1200887b.css"
   },
   {
-    "revision": "73e941c23d673090c4db",
-    "url": "css/Project.316d4367.css"
+    "revision": "4c0f0b41b198f332ca8f",
+    "url": "css/Project.d44554b3.css"
   },
   {
     "revision": "bc40a1d466280e83da27",
@@ -24,23 +24,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/UpgradeButton.d1392748.css"
   },
   {
-    "revision": "279b0d80d66da632b8f9c5ee30665d6e",
-    "url": "img/avator.279b0d80.png"
+    "revision": "bf7988a6b028dbecc6d1ae21c58a365a",
+    "url": "img/avator.bf7988a6.jpg"
   },
   {
-    "revision": "8fc8975fe09d9b6f31ef8048fe2c5a31",
-    "url": "img/blog.8fc8975f.gif"
-  },
-  {
-    "revision": "03a081e3c07ab2e6faf4d083a495f2c6",
-    "url": "img/homepage.03a081e3.gif"
-  },
-  {
-    "revision": "b223dc087cdc1e85017203275c5d572c",
-    "url": "img/to-do-mvc.b223dc08.gif"
-  },
-  {
-    "revision": "cf1fdc78283bdb5dd10b45dc4fff2000",
+    "revision": "08356ecd109663bf543f0caab7d87d51",
     "url": "index.html"
   },
   {
@@ -48,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/Introduction.244c3b8a.js"
   },
   {
-    "revision": "73e941c23d673090c4db",
-    "url": "js/Project.c3a4b19b.js"
+    "revision": "4c0f0b41b198f332ca8f",
+    "url": "js/Project.69617c9f.js"
   },
   {
     "revision": "bc40a1d466280e83da27",
@@ -76,15 +64,27 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
+    "revision": "042e0a516d9c18d30ad1598ccead9aab",
+    "url": "media/blog.042e0a51.mp4"
+  },
+  {
+    "revision": "5a2d51ce3d539534a43261f3faa8ac8a",
+    "url": "media/homepage.5a2d51ce.mp4"
+  },
+  {
+    "revision": "b2da547c4baa4684207b4a8a83abd66a",
+    "url": "media/to-do-mvc.b2da547c.mp4"
+  },
+  {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "robots.txt"
   },
   {
-    "revision": "d142573a6b620433cfeb",
+    "revision": "8cd6fbd3d8df463c7ab9",
     "url": "server-push/css/app.css"
   },
   {
-    "revision": "d142573a6b620433cfeb",
+    "revision": "8cd6fbd3d8df463c7ab9",
     "url": "server-push/js/app.js"
   },
   {
